@@ -1,0 +1,57 @@
+[
+    {
+        "category": "Goals",
+        "items": [
+            {
+                "title":"Child Education",
+                "type":"TextField",
+                "value":""
+            },
+            {
+                "title":"Child Marriage",
+                "type":"TextField",
+                "value":""
+            },
+            {
+                "title":"Retirement",
+                "type":"TextField",
+                "value":""
+            },
+            {
+                "title":"Car and Home",
+                "type":"TextField",
+                "value":""
+            },
+            {
+                "title":"Vacation",
+                "type":"TextField",
+                "value":""
+            },
+            {
+                "title":"Parent Support Goal",
+                "type":"TextField",
+                "value":""
+            },
+            {
+                "title":"Other Goal",
+                "type":"TextField",
+                "value":""
+            }
+        ]
+    },
+    {
+        "category": "",
+        "items": [
+            {
+                "title":"Income",
+                "type":"TextField",
+                "value":""
+            },
+            {
+                "title":"Age",
+                "type":"TextField",
+                "value":""
+            }
+        ]
+    }
+]

@@ -1,0 +1,192 @@
+[
+    {
+        "category": "BasicProfile",
+        "items": [
+            {
+                "title":"FirstName",
+                "type":"TextField",
+                "value":""
+            },
+            {
+                "title":"MiddleName",
+                "type":"TextField",
+                "value":""
+            },
+            {
+                "title":"LastName",
+                "type":"TextField",
+                "value":""
+            },
+            {
+                "title":"Occupation",
+                "type":"TextField",
+                "value":""
+            },
+            {
+                "title":"Gender",
+                "type":"TextField",
+                "value":""
+            },
+            {
+                "title":"Marital Status",
+                "type":"TextField",
+                "value":""
+            },
+            {
+                "title":"Date of Birth",
+                "type":"TextField",
+                "value":""
+            },
+            {
+                "title":"City",
+                "type":"TextField",
+                "value":""
+            },
+            {
+                "title":"Phone Number",
+                "type":"TextField",
+                "value":""
+            }
+        ]
+    },
+    {
+        "category": "Income",
+        "items": [
+            {
+                "title":"Income from Salary",
+                "type":"TextField",
+                "value":""
+            },
+            {
+                "title":"Business Income",
+                "type":"TextField",
+                "value":""
+            },
+            {
+                "title":"Rental Income",
+                "type":"TextField",
+                "value":""
+            },
+            {
+                "title":"Interest Income",
+                "type":"TextField",
+                "value":""
+            },
+            {
+                "title":"Dividend",
+                "type":"TextField",
+                "value":""
+            },
+            {
+                "title":"Other Income",
+                "type":"TextField",
+                "value":""
+            }
+        ]
+    },
+    {
+        "category": "Expenses",
+        "items": [
+            {
+                "title":"House Hold Exp",
+                "type":"TextField",
+                "value":""
+            },
+            {
+                "title":"Rental Exp",
+                "type":"TextField",
+                "value":""
+            },
+            {
+                "title":"Travel Exp",
+                "type":"TextField",
+                "value":""
+            },
+            {
+                "title":"Child's/Parent's Exp",
+                "type":"TextField",
+                "value":""
+            },
+            {
+                "title":"Medical Exp",
+                "type":"TextField",
+                "value":""
+            },
+            {
+                "title":"Other Exp",
+                "type":"TextField",
+                "value":""
+            }
+        ]
+    },
+    {
+        "category": "Assets",
+        "items": [
+            {
+                "title":"Mutual Fund",
+                "type":"TextField",
+                "value":""
+            },
+            {
+                "title":"Equity",
+                "type":"TextField",
+                "value":""
+            },
+            {
+                "title":"PPF",
+                "type":"TextField",
+                "value":""
+            },
+            {
+                "title":"EPF",
+                "type":"TextField",
+                "value":""
+            },
+            {
+                "title":"NPS",
+                "type":"TextField",
+                "value":""
+            },
+            {
+                "title":"RealEstate, Gold and Others",
+                "type":"TextField",
+                "value":""
+            }
+        ]
+    },
+    {
+        "category": "Liabilities",
+        "items": [
+            {
+                "title":"Home Loan",
+                "type":"TextField",
+                "value":""
+            },
+            {
+                "title":"Other Liabilities",
+                "type":"TextField",
+                "value":""
+            }
+        ]
+    },
+    {
+        "category": "Insurance",
+        "items": [
+            {
+                "title":"Life Insurance",
+                "type":"TextField",
+                "value":""
+            },
+            {
+                "title":"Health Insurance",
+                "type":"TextField",
+                "value":""
+            },
+            {
+                "title":"Motor Insurance",
+                "type":"TextField",
+                "value":""
+            }
+        ]
+    }
+]
