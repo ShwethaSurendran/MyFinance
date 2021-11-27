@@ -14,7 +14,7 @@ class FinancialProfileViewController: UIViewController {
     
     var profileData: [FinancialProfileModel] = []
     var screenIndex = 0
-    var currentOption: Constants.FinancialServices = .financePlanner
+    var currentOption: Constants.FinancialService = .financePlanner
     
     
     override func viewDidLoad() {
@@ -33,21 +33,18 @@ class FinancialProfileViewController: UIViewController {
     /// Bind to profileData property of viewModel
     /// Update UI, when there is an update in profileData property
     func bindToViewModel() {
-        var viewModel: FinancialProfileViewModel = FinancialProfileViewModel()
-        viewModel.profileData.bind({ responseModel in
-            self.profileData = responseModel ?? []
-            self.setupData()
+        var viewModel: FinancialProfileViewModel = FinancialProfileViewModel(fileNameToLoadDataFrom: currentOption == .financePlanner ? Constants.JsonFileNames.financePlannerCategories : Constants.JsonFileNames.wealthCreationCategories)
+        viewModel.profileData.bind({[weak self] responseModel in
+            self?.profileData = responseModel ?? []
+            self?.setupData()
         })
-        viewModel.getProfileData(fromJSONFile: currentOption == .financePlanner ? Constants.JsonFileNames.financePlannerCategories : Constants.JsonFileNames.wealthCreationCategories)
     }
-    
     
     /// On submit, navigates to new screen by passing index of next details to be shown
     @IBAction func onClickSubmit(_ sender: Any) {
-        screenIndex += 1
-        if screenIndex < profileData.count {
+        if screenIndex+1 < profileData.count {
             guard let viewController : FinancialProfileViewController = UIStoryboard(name: Constants.Storyboard.main, bundle: nil).instantiateVC() else {return}
-            viewController.screenIndex = screenIndex
+            viewController.screenIndex = screenIndex+1
             viewController.profileData = profileData
             navigationController?.pushViewController(viewController, animated: true)
         }else {
@@ -60,16 +57,18 @@ class FinancialProfileViewController: UIViewController {
     
     /// Pops to previous screen on back icon click
     @IBAction func onBackIconClick(_ sender: Any) {
-        navigationController?.popViewController(animated: true)
+//        showAlert(title: "", message: "You will lost all entered data when you go back. Do you still want to continue?") {
+            self.navigationController?.popViewController(animated: true)
+//        }
     }
-
+    
 }
 
 // MARK: - TableView DataSource and Delegate methods
 extension FinancialProfileViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 90
+        return 100
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -77,11 +76,25 @@ extension FinancialProfileViewController: UITableViewDataSource, UITableViewDele
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell: InputTextfieldTableCell = tableView.dequeueReusableCell(withIdentifier: InputTextfieldTableCell.identifier, for: indexPath) as! InputTextfieldTableCell
-        cell.tag = indexPath.row
-        cell.setData(title: screenIndex < profileData.count ? profileData[screenIndex].items?[indexPath.row].title ?? "" : "")
-        cell.delegate = self
-        return cell
+        guard let currentItem = profileData[screenIndex].items?[indexPath.row] else {return UITableViewCell()}
+        if currentItem.type == .picker {
+            let cell: PickerTableCell = tableView.dequeueReusableCell(for: indexPath)
+            cell.setData(title: currentItem.title ?? "", pickerOptions: currentItem.options ?? [])
+            cell.delegate = self
+            return cell
+        }else if currentItem.type == .datePicker {
+            let cell: DatePickerTableCell = tableView.dequeueReusableCell(for: indexPath)
+            cell.setData(title: currentItem.title ?? "")
+            profileData[screenIndex].items?[indexPath.row]?.value = CommonUtility.getFormattedDate(from: Date())
+            cell.delegate = self
+            return cell
+        }else {
+            let cell: InputTextfieldTableCell = tableView.dequeueReusableCell(for: indexPath)
+            cell.setData(title: currentItem.title ?? "", uiType: currentItem.type ?? .stringTextField)
+            cell.delegate = self
+            return cell
+        }
+        
     }
     
 }
@@ -90,7 +103,7 @@ extension FinancialProfileViewController: UITableViewDataSource, UITableViewDele
 // MARK: - Update profileData variable, when user add/update profile details
 extension FinancialProfileViewController: ProfileDataUpdateProtocol {
     func updateValue(value: String, index: Int) {
-        profileData[screenIndex].items?[index].value = value
+        profileData[screenIndex].items?[index]?.value = value
     }
 }
 

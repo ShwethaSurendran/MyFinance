@@ -17,10 +17,11 @@ struct Constants {
     struct FileExtension {
         static let json = "json"
     }
-    enum FinancialServices: String, CaseIterable {
+    enum FinancialService: String, CaseIterable {
         case financePlanner = "Financial Planner"
         case wealthCreation = "Wealth Creation"
     }
+
 }
 
 

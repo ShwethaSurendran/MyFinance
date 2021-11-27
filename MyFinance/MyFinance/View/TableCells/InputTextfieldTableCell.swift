@@ -6,9 +6,7 @@
 //
 
 
-protocol ProfileDataUpdateProtocol {
-    func updateValue(value: String, index: Int)
-}
+
 
 
 import UIKit
@@ -18,18 +16,24 @@ class InputTextfieldTableCell: UITableViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var inputTextField: UITextField!
     var delegate: ProfileDataUpdateProtocol?
+    var type: UIType?
     
     override func awakeFromNib() {
         super.awakeFromNib()
     }
     
-    /// Cell ReuseIdentifier
-    static var identifier: String {
-        return String(describing: self)
+    func setData(title: String, uiType: UIType) {
+        titleLabel.text = title
+        inputTextField.keyboardType = uiType == .numberTextField ? .decimalPad : .default
+        type = uiType
     }
     
-    func setData(title: String) {
-        titleLabel.text = title
+    func isDecimalDotExists(string: String)-> Bool {
+        let countdots =  (inputTextField.text?.components(separatedBy: (".")).count)! - 1
+        if (countdots > 0 && string == ".") {
+            return true
+        }
+        return false
     }
     
 }
@@ -37,6 +41,11 @@ class InputTextfieldTableCell: UITableViewCell {
 // MARK: - TextField Delegate methods
 extension InputTextfieldTableCell: UITextFieldDelegate {
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        
+        if type == .numberTextField && isDecimalDotExists(string: string) {
+            return false
+        }
+        
         if let text = textField.text,
            let textRange = Range(range, in: text) {
             let updatedText = text.replacingCharacters(in: textRange,

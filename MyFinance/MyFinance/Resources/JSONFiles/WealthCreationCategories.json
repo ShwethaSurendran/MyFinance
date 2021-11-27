@@ -4,37 +4,37 @@
         "items": [
             {
                 "title":"Child Education",
-                "type":"TextField",
+                "type":"numberTextField",
                 "value":""
             },
             {
                 "title":"Child Marriage",
-                "type":"TextField",
+                "type":"numberTextField",
                 "value":""
             },
             {
                 "title":"Retirement",
-                "type":"TextField",
+                "type":"numberTextField",
                 "value":""
             },
             {
                 "title":"Car and Home",
-                "type":"TextField",
+                "type":"numberTextField",
                 "value":""
             },
             {
                 "title":"Vacation",
-                "type":"TextField",
+                "type":"numberTextField",
                 "value":""
             },
             {
                 "title":"Parent Support Goal",
-                "type":"TextField",
+                "type":"numberTextField",
                 "value":""
             },
             {
                 "title":"Other Goal",
-                "type":"TextField",
+                "type":"numberTextField",
                 "value":""
             }
         ]
@@ -44,12 +44,12 @@
         "items": [
             {
                 "title":"Income",
-                "type":"TextField",
+                "type":"numberTextField",
                 "value":""
             },
             {
                 "title":"Age",
-                "type":"TextField",
+                "type":"numberTextField",
                 "value":""
             }
         ]

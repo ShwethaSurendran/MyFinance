@@ -4,47 +4,49 @@
         "items": [
             {
                 "title":"FirstName",
-                "type":"TextField",
+                "type":"stringTextField",
                 "value":""
             },
             {
                 "title":"MiddleName",
-                "type":"TextField",
+                "type":"stringTextField",
                 "value":""
             },
             {
                 "title":"LastName",
-                "type":"TextField",
+                "type":"stringTextField",
                 "value":""
             },
             {
                 "title":"Occupation",
-                "type":"TextField",
+                "type":"stringTextField",
                 "value":""
             },
             {
                 "title":"Gender",
-                "type":"TextField",
+                "type":"picker",
+                "options":["Male", "Female"],
                 "value":""
             },
             {
                 "title":"Marital Status",
-                "type":"TextField",
+                "type":"picker",
+                "options":["Single", "Married"],
                 "value":""
             },
             {
                 "title":"Date of Birth",
-                "type":"TextField",
+                "type":"datePicker",
                 "value":""
             },
             {
                 "title":"City",
-                "type":"TextField",
+                "type":"stringTextField",
                 "value":""
             },
             {
                 "title":"Phone Number",
-                "type":"TextField",
+                "type":"numberTextField",
                 "value":""
             }
         ]
@@ -54,32 +56,32 @@
         "items": [
             {
                 "title":"Income from Salary",
-                "type":"TextField",
+                "type":"numberTextField",
                 "value":""
             },
             {
                 "title":"Business Income",
-                "type":"TextField",
+                "type":"numberTextField",
                 "value":""
             },
             {
                 "title":"Rental Income",
-                "type":"TextField",
+                "type":"numberTextField",
                 "value":""
             },
             {
                 "title":"Interest Income",
-                "type":"TextField",
+                "type":"numberTextField",
                 "value":""
             },
             {
                 "title":"Dividend",
-                "type":"TextField",
+                "type":"numberTextField",
                 "value":""
             },
             {
                 "title":"Other Income",
-                "type":"TextField",
+                "type":"numberTextField",
                 "value":""
             }
         ]
@@ -89,32 +91,32 @@
         "items": [
             {
                 "title":"House Hold Exp",
-                "type":"TextField",
+                "type":"numberTextField",
                 "value":""
             },
             {
                 "title":"Rental Exp",
-                "type":"TextField",
+                "type":"numberTextField",
                 "value":""
             },
             {
                 "title":"Travel Exp",
-                "type":"TextField",
+                "type":"numberTextField",
                 "value":""
             },
             {
                 "title":"Child's/Parent's Exp",
-                "type":"TextField",
+                "type":"numberTextField",
                 "value":""
             },
             {
                 "title":"Medical Exp",
-                "type":"TextField",
+                "type":"numberTextField",
                 "value":""
             },
             {
                 "title":"Other Exp",
-                "type":"TextField",
+                "type":"numberTextField",
                 "value":""
             }
         ]
@@ -124,32 +126,32 @@
         "items": [
             {
                 "title":"Mutual Fund",
-                "type":"TextField",
+                "type":"numberTextField",
                 "value":""
             },
             {
                 "title":"Equity",
-                "type":"TextField",
+                "type":"numberTextField",
                 "value":""
             },
             {
                 "title":"PPF",
-                "type":"TextField",
+                "type":"numberTextField",
                 "value":""
             },
             {
                 "title":"EPF",
-                "type":"TextField",
+                "type":"numberTextField",
                 "value":""
             },
             {
                 "title":"NPS",
-                "type":"TextField",
+                "type":"numberTextField",
                 "value":""
             },
             {
                 "title":"RealEstate, Gold and Others",
-                "type":"TextField",
+                "type":"numberTextField",
                 "value":""
             }
         ]
@@ -159,12 +161,12 @@
         "items": [
             {
                 "title":"Home Loan",
-                "type":"TextField",
+                "type":"numberTextField",
                 "value":""
             },
             {
                 "title":"Other Liabilities",
-                "type":"TextField",
+                "type":"numberTextField",
                 "value":""
             }
         ]
@@ -174,17 +176,17 @@
         "items": [
             {
                 "title":"Life Insurance",
-                "type":"TextField",
+                "type":"numberTextField",
                 "value":""
             },
             {
                 "title":"Health Insurance",
-                "type":"TextField",
+                "type":"numberTextField",
                 "value":""
             },
             {
                 "title":"Motor Insurance",
-                "type":"TextField",
+                "type":"numberTextField",
                 "value":""
             }
         ]

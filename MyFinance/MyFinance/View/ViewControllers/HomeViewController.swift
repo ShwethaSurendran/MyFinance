@@ -23,18 +23,18 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return Constants.FinancialServices.allCases.count
+        return Constants.FinancialService.allCases.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell: ServiceTableCell = tableView.dequeueReusableCell(withIdentifier: ServiceTableCell.identifier, for: indexPath) as! ServiceTableCell
-        cell.setData(serviceName: Constants.FinancialServices.allCases[indexPath.row].rawValue)
+        let cell: ServiceTableCell = tableView.dequeueReusableCell(for: indexPath)
+        cell.setData(serviceName: Constants.FinancialService.allCases[indexPath.row].rawValue)
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let viewController : FinancialProfileViewController = UIStoryboard(name: Constants.Storyboard.main, bundle: nil).instantiateVC() else {return}
-        viewController.currentOption = Constants.FinancialServices.allCases[indexPath.row]
+        viewController.currentOption = Constants.FinancialService.allCases[indexPath.row]
         navigationController?.pushViewController(viewController, animated: true)
     }
     

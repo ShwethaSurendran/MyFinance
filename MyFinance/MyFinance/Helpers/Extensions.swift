@@ -23,3 +23,24 @@ extension UIViewController {
     self.present(alertController, animated: true, completion: nil)
   }
 }
+
+
+
+
+extension UITableViewCell: ReusableView {}
+
+extension UITableView {
+    
+    /// Returns a reusable table-view cell
+    /// - Parameter indexPath: The index path specifying the location of the cell
+    /// - Returns: A UITableViewCell object with the associated reuse identifier. This method always returns a valid cell.
+    func dequeueReusableCell<T: UITableViewCell>(for indexPath: IndexPath) -> T {
+        guard let cell = dequeueReusableCell(withIdentifier: T.reuseIdentifier, for: indexPath) as? T else {
+            fatalError("Unable to Dequeue Reusable Table View Cell")
+        }
+        cell.tag = indexPath.row
+        return cell
+    }
+
+}
+

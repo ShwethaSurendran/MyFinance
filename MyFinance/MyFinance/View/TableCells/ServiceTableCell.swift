@@ -15,11 +15,6 @@ class ServiceTableCell: UITableViewCell {
         super.awakeFromNib()
     }
     
-    /// Cell ReuseIdentifier
-    static var identifier: String {
-        return String(describing: self)
-    }
-    
     func setData(serviceName: String) {
         serviceNameLabel.text = serviceName
     }

@@ -12,6 +12,10 @@ struct FinancialProfileViewModel {
     
     var profileData: Observable<[FinancialProfileModel]?> = Observable(nil)
     
+    init(fileNameToLoadDataFrom fileName: String) {
+        getProfileData(fromJSONFile: fileName)
+    }
+    
     /// Get parsed profile data model from the requested JSON file
     /// - Parameter fileName: Name of JSON file in the Bundle, to decode from
     mutating func getProfileData(fromJSONFile fileName: String) {

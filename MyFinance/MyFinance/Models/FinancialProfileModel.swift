@@ -7,14 +7,21 @@
 
 import Foundation
 
-struct FinancialProfileModel: Codable {
+struct FinancialProfileModel: Decodable {
     var category: String?
-    var items: [FinancialProfileItemModel]?
+    var items: [FinancialProfileItemModel?]?
 }
 
-struct FinancialProfileItemModel: Codable {
+struct FinancialProfileItemModel: Decodable {
     var title: String?
-    var type: String?
+    var type: UIType?
+    var options: [String]?
     var value: String?
 }
 
+enum UIType: String, Decodable {
+    case stringTextField
+    case numberTextField
+    case picker
+    case datePicker
+}
