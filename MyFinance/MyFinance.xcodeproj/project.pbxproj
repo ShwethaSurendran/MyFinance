@@ -19,6 +19,9 @@
 		F48BB3DA2750E97000BE5BB8 /* DatePickerTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48BB3D92750E97000BE5BB8 /* DatePickerTableCell.swift */; };
 		F48BB3DC2750F5A100BE5BB8 /* CommonUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48BB3DB2750F5A100BE5BB8 /* CommonUtility.swift */; };
 		F48BB3DE275105A000BE5BB8 /* PickerTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48BB3DD275105A000BE5BB8 /* PickerTableCell.swift */; };
+		F491BA2F275A88770006E5DB /* FinancialProfileViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F491BA2E275A88770006E5DB /* FinancialProfileViewModelTests.swift */; };
+		F4AC5BE22759E340002A89C0 /* FinancialProfileTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4AC5BE12759E340002A89C0 /* FinancialProfileTests.swift */; };
+		F4AC5BE42759FEAD002A89C0 /* ReportViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4AC5BE32759FEAD002A89C0 /* ReportViewModelTests.swift */; };
 		F4B8EBF02755F9860024BBB7 /* ReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B8EBEF2755F9860024BBB7 /* ReportViewController.swift */; };
 		F4B8EBF22755FA5D0024BBB7 /* ChartTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B8EBF12755FA5D0024BBB7 /* ChartTableCell.swift */; };
 		F4B8EBF52756001E0024BBB7 /* Charts in Frameworks */ = {isa = PBXBuildFile; productRef = F4B8EBF42756001E0024BBB7 /* Charts */; };
@@ -30,7 +33,6 @@
 		F4D28901274BE2A200CF696A /* MyFinance.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F4D288FF274BE2A200CF696A /* MyFinance.xcdatamodeld */; };
 		F4D28903274BE2A300CF696A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4D28902274BE2A300CF696A /* Assets.xcassets */; };
 		F4D28906274BE2A300CF696A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4D28904274BE2A300CF696A /* LaunchScreen.storyboard */; };
-		F4D28911274BE2A300CF696A /* MyFinanceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D28910274BE2A300CF696A /* MyFinanceTests.swift */; };
 		F4D2891C274BE2A300CF696A /* MyFinanceUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D2891B274BE2A300CF696A /* MyFinanceUITests.swift */; };
 		F4D28930274BE42100CF696A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D2892F274BE42100CF696A /* HomeViewController.swift */; };
 		F4D28933274BEF0300CF696A /* ServiceTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D28932274BEF0300CF696A /* ServiceTableCell.swift */; };
@@ -69,6 +71,9 @@
 		F48BB3D92750E97000BE5BB8 /* DatePickerTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerTableCell.swift; sourceTree = "<group>"; };
 		F48BB3DB2750F5A100BE5BB8 /* CommonUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonUtility.swift; sourceTree = "<group>"; };
 		F48BB3DD275105A000BE5BB8 /* PickerTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerTableCell.swift; sourceTree = "<group>"; };
+		F491BA2E275A88770006E5DB /* FinancialProfileViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinancialProfileViewModelTests.swift; sourceTree = "<group>"; };
+		F4AC5BE12759E340002A89C0 /* FinancialProfileTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinancialProfileTests.swift; sourceTree = "<group>"; };
+		F4AC5BE32759FEAD002A89C0 /* ReportViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportViewModelTests.swift; sourceTree = "<group>"; };
 		F4B8EBEF2755F9860024BBB7 /* ReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportViewController.swift; sourceTree = "<group>"; };
 		F4B8EBF12755FA5D0024BBB7 /* ChartTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartTableCell.swift; sourceTree = "<group>"; };
 		F4B8EBF627565D3B0024BBB7 /* ProfileDetailsTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileDetailsTableCell.swift; sourceTree = "<group>"; };
@@ -82,7 +87,6 @@
 		F4D28905274BE2A300CF696A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F4D28907274BE2A300CF696A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F4D2890C274BE2A300CF696A /* MyFinanceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyFinanceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		F4D28910274BE2A300CF696A /* MyFinanceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFinanceTests.swift; sourceTree = "<group>"; };
 		F4D28912274BE2A300CF696A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F4D28917274BE2A300CF696A /* MyFinanceUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyFinanceUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4D2891B274BE2A300CF696A /* MyFinanceUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFinanceUITests.swift; sourceTree = "<group>"; };
@@ -188,7 +192,9 @@
 		F4D2890F274BE2A300CF696A /* MyFinanceTests */ = {
 			isa = PBXGroup;
 			children = (
-				F4D28910274BE2A300CF696A /* MyFinanceTests.swift */,
+				F4AC5BE12759E340002A89C0 /* FinancialProfileTests.swift */,
+				F491BA2E275A88770006E5DB /* FinancialProfileViewModelTests.swift */,
+				F4AC5BE32759FEAD002A89C0 /* ReportViewModelTests.swift */,
 				F4D28912274BE2A300CF696A /* Info.plist */,
 			);
 			path = MyFinanceTests;
@@ -428,7 +434,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F4D28911274BE2A300CF696A /* MyFinanceTests.swift in Sources */,
+				F4AC5BE42759FEAD002A89C0 /* ReportViewModelTests.swift in Sources */,
+				F491BA2F275A88770006E5DB /* FinancialProfileViewModelTests.swift in Sources */,
+				F4AC5BE22759E340002A89C0 /* FinancialProfileTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

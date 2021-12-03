@@ -33,7 +33,7 @@ class FinancialProfileViewController: UIViewController {
     /// Bind to profileData property of viewModel
     /// Update UI, when there is an update in profileData property
     func bindToViewModel() {
-        var viewModel: FinancialProfileViewModel = FinancialProfileViewModel(fileNameToLoadDataFrom: currentOption == .financePlanner ? Constants.JsonFileNames.financePlannerCategories : Constants.JsonFileNames.wealthCreationCategories)
+        var viewModel: FinancialProfileViewModel = FinancialProfileViewModel(fileNameToLoadDataFrom: currentOption == .financePlanner ? Constants.JsonFileNames.financePlannerCategories : Constants.JsonFileNames.wealthCreationCategories, jsonParser: JSONParser())
         viewModel.profileData.bind({[weak self] responseModel in
             self?.profileData = responseModel ?? []
             self?.setupData()
@@ -102,7 +102,7 @@ extension FinancialProfileViewController: UITableViewDataSource, UITableViewDele
             return cell
         }else {
             let cell: InputTextfieldTableCell = tableView.dequeueReusableCell(for: indexPath)
-            cell.setData(title: currentItem?.title ?? "", uiType: currentItem?.type ?? .stringTextField, isMandatory: currentItem?.isMandatory ?? false)
+            cell.setData(financialProfileItem: currentItem)
             cell.delegate = self
             return cell
         }

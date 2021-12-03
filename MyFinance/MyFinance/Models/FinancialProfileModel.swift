@@ -20,6 +20,15 @@ struct FinancialProfileItemModel: Decodable {
     var value: String?
     var isMandatory: Bool?
     
+    init(title: String?, type: UIType?, options: [String]?, value: String?,
+         isMandatory: Bool?) {
+        self.title = title
+        self.type = type
+        self.options = options
+        self.value = value
+        self.isMandatory = isMandatory
+    }
+    
     enum CodingKeys: String, CodingKey {
         case title = "title"
         case type = "type"

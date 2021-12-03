@@ -18,10 +18,13 @@ class InputTextfieldTableCell: UITableViewCell {
         super.awakeFromNib()
     }
     
-    func setData(title: String, uiType: UIType, isMandatory: Bool) {
-        titleLabel.attributedText = isMandatory ? CommonUtility.getAttributedString(fromInputString: (title + "*"), forCharacter: "*") : NSAttributedString.init(string: title)
-        inputTextField.keyboardType = uiType == .numberTextField ? .decimalPad : .default
-        type = uiType
+    func setData(financialProfileItem: FinancialProfileItemModel?) {
+        if let financialProfileItem = financialProfileItem {
+            titleLabel.attributedText = (financialProfileItem.isMandatory ?? false) ? CommonUtility.getAttributedString(fromInputString: ((financialProfileItem.title ?? "") + "*"), forCharacter: "*") : NSAttributedString.init(string: financialProfileItem.title ?? "")
+            inputTextField.text = financialProfileItem.value
+            type = financialProfileItem.type
+            inputTextField.keyboardType = financialProfileItem.type == .numberTextField ? .decimalPad : .default
+        }
     }
     
     /// Check if typed value already contains decimal point
