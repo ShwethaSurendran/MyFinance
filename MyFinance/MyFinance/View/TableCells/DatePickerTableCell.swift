@@ -17,13 +17,13 @@ class DatePickerTableCell: UITableViewCell {
         super.awakeFromNib()
     }
 
-    func setData(title: String) {
-        titleLabel.text = title
+    func setData(title: String, isMandatory: Bool) {
+        titleLabel.attributedText = isMandatory ? CommonUtility.getAttributedString(fromInputString: (title + "*"), forCharacter: "*") : NSAttributedString.init(string: title)
     }
     
+    /// Calls this method when picking date from DatePicker
     @IBAction func onPickDate(_ sender: Any) {
         delegate?.updateValue(value: CommonUtility.getFormattedDate(from: datePicker.date), index: self.tag)
     }
     
-
 }

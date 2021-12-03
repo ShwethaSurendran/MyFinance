@@ -25,7 +25,7 @@ class FinancialProfileViewController: UIViewController {
     /// setup UI data
     func setupData() {
         if profileData.count > 0 {
-            titleLabel.text = profileData[screenIndex].category
+            titleLabel.text = profileData[screenIndex].category?.rawValue
             profileDetailsTableview.reloadData()
         }
     }
@@ -42,24 +42,36 @@ class FinancialProfileViewController: UIViewController {
     
     /// On submit, navigates to new screen by passing index of next details to be shown
     @IBAction func onClickSubmit(_ sender: Any) {
-        if screenIndex+1 < profileData.count {
-            guard let viewController : FinancialProfileViewController = UIStoryboard(name: Constants.Storyboard.main, bundle: nil).instantiateVC() else {return}
-            viewController.screenIndex = screenIndex+1
-            viewController.profileData = profileData
-            navigationController?.pushViewController(viewController, animated: true)
+        if !isMandatoryFieldsAreEmpty(financialProfileModel: profileData[screenIndex]) {
+            if screenIndex+1 < profileData.count {
+                guard let viewController : FinancialProfileViewController = UIStoryboard(name: Constants.Storyboard.main, bundle: nil).instantiateVC() else {return}
+                viewController.screenIndex = screenIndex+1
+                viewController.profileData = profileData
+                navigationController?.pushViewController(viewController, animated: true)
+            }else {
+                guard let viewController : ReportViewController = UIStoryboard(name: Constants.Storyboard.main, bundle: nil).instantiateVC() else {return}
+                viewController.profileData = profileData
+                navigationController?.pushViewController(viewController, animated: true)
+            }
         }else {
-            showAlert(title: "", message: "Make sure all data entered is valid before generating report") {
-                self.navigationController?.popToRootViewController(animated: false)
+            showAlert(title: "", message: "Please fill all mandatory fields", actionHandler: {})
+        }
+    }
+    
+    func isMandatoryFieldsAreEmpty(financialProfileModel: FinancialProfileModel)-> Bool {
+        guard let items = financialProfileModel.items else {return false}
+        for each in items {
+            if (each.isMandatory ?? false) && ((each.value ?? "").isEmpty) {
+                return true
             }
         }
+        return false
     }
     
     
     /// Pops to previous screen on back icon click
     @IBAction func onBackIconClick(_ sender: Any) {
-//        showAlert(title: "", message: "You will lost all entered data when you go back. Do you still want to continue?") {
-            self.navigationController?.popViewController(animated: true)
-//        }
+        self.navigationController?.popViewController(animated: true)
     }
     
 }
@@ -76,21 +88,21 @@ extension FinancialProfileViewController: UITableViewDataSource, UITableViewDele
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let currentItem = profileData[screenIndex].items?[indexPath.row] else {return UITableViewCell()}
-        if currentItem.type == .picker {
+        let currentItem = profileData[screenIndex].items?[indexPath.row]
+        if currentItem?.type == .picker {
             let cell: PickerTableCell = tableView.dequeueReusableCell(for: indexPath)
-            cell.setData(title: currentItem.title ?? "", pickerOptions: currentItem.options ?? [])
+            cell.setData(title: currentItem?.title ?? "", pickerOptions: currentItem?.options ?? [], isMandatory: currentItem?.isMandatory ?? false)
             cell.delegate = self
             return cell
-        }else if currentItem.type == .datePicker {
+        }else if currentItem?.type == .datePicker {
             let cell: DatePickerTableCell = tableView.dequeueReusableCell(for: indexPath)
-            cell.setData(title: currentItem.title ?? "")
-            profileData[screenIndex].items?[indexPath.row]?.value = CommonUtility.getFormattedDate(from: Date())
+            cell.setData(title: currentItem?.title ?? "", isMandatory: currentItem?.isMandatory ?? false)
+            profileData[screenIndex].items?[indexPath.row].value = CommonUtility.getFormattedDate(from: Date())
             cell.delegate = self
             return cell
         }else {
             let cell: InputTextfieldTableCell = tableView.dequeueReusableCell(for: indexPath)
-            cell.setData(title: currentItem.title ?? "", uiType: currentItem.type ?? .stringTextField)
+            cell.setData(title: currentItem?.title ?? "", uiType: currentItem?.type ?? .stringTextField, isMandatory: currentItem?.isMandatory ?? false)
             cell.delegate = self
             return cell
         }
@@ -103,7 +115,7 @@ extension FinancialProfileViewController: UITableViewDataSource, UITableViewDele
 // MARK: - Update profileData variable, when user add/update profile details
 extension FinancialProfileViewController: ProfileDataUpdateProtocol {
     func updateValue(value: String, index: Int) {
-        profileData[screenIndex].items?[index]?.value = value
+        profileData[screenIndex].items?[index].value = value
     }
 }
 

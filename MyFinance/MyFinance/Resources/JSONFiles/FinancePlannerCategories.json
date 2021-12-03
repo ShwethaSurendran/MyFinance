@@ -5,49 +5,58 @@
             {
                 "title":"FirstName",
                 "type":"stringTextField",
-                "value":""
+                "value":"",
+                "isMandatory":true
             },
             {
                 "title":"MiddleName",
                 "type":"stringTextField",
-                "value":""
+                "value":"",
+                "isMandatory":false
             },
             {
                 "title":"LastName",
                 "type":"stringTextField",
-                "value":""
+                "value":"",
+                "isMandatory":true
             },
             {
                 "title":"Occupation",
                 "type":"stringTextField",
-                "value":""
+                "value":"",
+                "isMandatory":true
             },
             {
                 "title":"Gender",
                 "type":"picker",
                 "options":["Male", "Female"],
-                "value":""
+                "value":"",
+                "isMandatory":true
             },
             {
                 "title":"Marital Status",
                 "type":"picker",
                 "options":["Single", "Married"],
-                "value":""
+                "value":"",
+                "isMandatory":true
             },
             {
                 "title":"Date of Birth",
                 "type":"datePicker",
-                "value":""
+                "value":"",
+                "isMandatory":true
             },
             {
                 "title":"City",
                 "type":"stringTextField",
-                "value":""
+                "value":"",
+                "isMandatory":true
             },
             {
                 "title":"Phone Number",
                 "type":"numberTextField",
-                "value":""
+                "value":"",
+                "isMandatory":true
             }
         ]
     },

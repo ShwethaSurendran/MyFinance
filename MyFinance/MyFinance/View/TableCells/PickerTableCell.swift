@@ -19,17 +19,16 @@ class PickerTableCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         picker.isHidden = true
-        selectedItemButton.isHidden = false
     }
     
-    func setData(title: String, pickerOptions: [String]) {
-        titleLabel.text = title
+    func setData(title: String, pickerOptions: [String], isMandatory: Bool) {
+        titleLabel.attributedText = isMandatory ? CommonUtility.getAttributedString(fromInputString: (title + "*"), forCharacter: "*") : NSAttributedString.init(string: title)
         options = pickerOptions
     }
     
+    /// Shows picker on tapping input field
     @IBAction func onTapView(_ sender: Any) {
         picker.isHidden = false
-        selectedItemButton.isHidden = true
     }
 }
 
@@ -48,9 +47,9 @@ extension PickerTableCell: UIPickerViewDataSource, UIPickerViewDelegate {
         selectedItemButton.setTitle(options[row], for: .normal)
         delegate?.updateValue(value: options[row], index: self.tag)
         picker.isHidden = true
-        selectedItemButton.isHidden = false
     }
-        
+    
+    /// Change picker text color
     func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
         return NSAttributedString(string: options[row], attributes: [NSAttributedString.Key.foregroundColor : UIColor.white])
     }

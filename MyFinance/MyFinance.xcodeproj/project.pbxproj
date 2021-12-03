@@ -3,20 +3,27 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		F401457B2751E7970051BF4A /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = F401457A2751E7970051BF4A /* Protocols.swift */; };
+		F40145A4275276D70051BF4A /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = F40145A3275276D70051BF4A /* IQKeyboardManagerSwift */; };
 		F422075C274E1FC600CDCA1A /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F422075B274E1FC600CDCA1A /* Extensions.swift */; };
 		F422075E274E242E00CDCA1A /* JSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F422075D274E242E00CDCA1A /* JSONParser.swift */; };
 		F4220760274E260600CDCA1A /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F422075F274E260600CDCA1A /* Observable.swift */; };
 		F4220763274E26C400CDCA1A /* FinancialProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4220762274E26C400CDCA1A /* FinancialProfileViewModel.swift */; };
+		F46C648F27588BA300EACD0F /* ReportViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46C648E27588BA300EACD0F /* ReportViewModel.swift */; };
 		F47F8E24274CF5D000C0842B /* FinancialProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47F8E23274CF5D000C0842B /* FinancialProfileModel.swift */; };
 		F47F8E26274CF9ED00C0842B /* InputTextfieldTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47F8E25274CF9ED00C0842B /* InputTextfieldTableCell.swift */; };
 		F48BB3DA2750E97000BE5BB8 /* DatePickerTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48BB3D92750E97000BE5BB8 /* DatePickerTableCell.swift */; };
 		F48BB3DC2750F5A100BE5BB8 /* CommonUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48BB3DB2750F5A100BE5BB8 /* CommonUtility.swift */; };
 		F48BB3DE275105A000BE5BB8 /* PickerTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48BB3DD275105A000BE5BB8 /* PickerTableCell.swift */; };
+		F4B8EBF02755F9860024BBB7 /* ReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B8EBEF2755F9860024BBB7 /* ReportViewController.swift */; };
+		F4B8EBF22755FA5D0024BBB7 /* ChartTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B8EBF12755FA5D0024BBB7 /* ChartTableCell.swift */; };
+		F4B8EBF52756001E0024BBB7 /* Charts in Frameworks */ = {isa = PBXBuildFile; productRef = F4B8EBF42756001E0024BBB7 /* Charts */; };
+		F4B8EBF727565D3B0024BBB7 /* ProfileDetailsTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B8EBF627565D3B0024BBB7 /* ProfileDetailsTableCell.swift */; };
+		F4B8EBF927565F4F0024BBB7 /* ChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B8EBF827565F4F0024BBB7 /* ChartView.swift */; };
 		F4D288F7274BE2A200CF696A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D288F6274BE2A200CF696A /* AppDelegate.swift */; };
 		F4D288F9274BE2A200CF696A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D288F8274BE2A200CF696A /* SceneDelegate.swift */; };
 		F4D288FE274BE2A200CF696A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4D288FC274BE2A200CF696A /* Main.storyboard */; };
@@ -56,11 +63,16 @@
 		F422075D274E242E00CDCA1A /* JSONParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONParser.swift; sourceTree = "<group>"; };
 		F422075F274E260600CDCA1A /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 		F4220762274E26C400CDCA1A /* FinancialProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinancialProfileViewModel.swift; sourceTree = "<group>"; };
+		F46C648E27588BA300EACD0F /* ReportViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportViewModel.swift; sourceTree = "<group>"; };
 		F47F8E23274CF5D000C0842B /* FinancialProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinancialProfileModel.swift; sourceTree = "<group>"; };
 		F47F8E25274CF9ED00C0842B /* InputTextfieldTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputTextfieldTableCell.swift; sourceTree = "<group>"; };
 		F48BB3D92750E97000BE5BB8 /* DatePickerTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerTableCell.swift; sourceTree = "<group>"; };
 		F48BB3DB2750F5A100BE5BB8 /* CommonUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonUtility.swift; sourceTree = "<group>"; };
 		F48BB3DD275105A000BE5BB8 /* PickerTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerTableCell.swift; sourceTree = "<group>"; };
+		F4B8EBEF2755F9860024BBB7 /* ReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportViewController.swift; sourceTree = "<group>"; };
+		F4B8EBF12755FA5D0024BBB7 /* ChartTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartTableCell.swift; sourceTree = "<group>"; };
+		F4B8EBF627565D3B0024BBB7 /* ProfileDetailsTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileDetailsTableCell.swift; sourceTree = "<group>"; };
+		F4B8EBF827565F4F0024BBB7 /* ChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartView.swift; sourceTree = "<group>"; };
 		F4D288F3274BE2A200CF696A /* MyFinance.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyFinance.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4D288F6274BE2A200CF696A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F4D288F8274BE2A200CF696A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -88,6 +100,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F40145A4275276D70051BF4A /* IQKeyboardManagerSwift in Frameworks */,
+				F4B8EBF52756001E0024BBB7 /* Charts in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -130,6 +144,7 @@
 			isa = PBXGroup;
 			children = (
 				F4220762274E26C400CDCA1A /* FinancialProfileViewModel.swift */,
+				F46C648E27588BA300EACD0F /* ReportViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -202,8 +217,9 @@
 		F4D2892E274BE40B00CF696A /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				F4FBDA60274D3DDB00432863 /* FinancialProfileViewController.swift */,
 				F4D2892F274BE42100CF696A /* HomeViewController.swift */,
+				F4FBDA60274D3DDB00432863 /* FinancialProfileViewController.swift */,
+				F4B8EBEF2755F9860024BBB7 /* ReportViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -215,6 +231,8 @@
 				F47F8E25274CF9ED00C0842B /* InputTextfieldTableCell.swift */,
 				F48BB3D92750E97000BE5BB8 /* DatePickerTableCell.swift */,
 				F48BB3DD275105A000BE5BB8 /* PickerTableCell.swift */,
+				F4B8EBF12755FA5D0024BBB7 /* ChartTableCell.swift */,
+				F4B8EBF627565D3B0024BBB7 /* ProfileDetailsTableCell.swift */,
 			);
 			path = TableCells;
 			sourceTree = "<group>";
@@ -236,6 +254,7 @@
 				F422075F274E260600CDCA1A /* Observable.swift */,
 				F48BB3DB2750F5A100BE5BB8 /* CommonUtility.swift */,
 				F401457A2751E7970051BF4A /* Protocols.swift */,
+				F4B8EBF827565F4F0024BBB7 /* ChartView.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -256,6 +275,10 @@
 			dependencies = (
 			);
 			name = MyFinance;
+			packageProductDependencies = (
+				F40145A3275276D70051BF4A /* IQKeyboardManagerSwift */,
+				F4B8EBF42756001E0024BBB7 /* Charts */,
+			);
 			productName = MyFinance;
 			productReference = F4D288F3274BE2A200CF696A /* MyFinance.app */;
 			productType = "com.apple.product-type.application";
@@ -327,6 +350,10 @@
 				Base,
 			);
 			mainGroup = F4D288EA274BE2A200CF696A;
+			packageReferences = (
+				F40145A2275276D70051BF4A /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
+				F4B8EBF32756001E0024BBB7 /* XCRemoteSwiftPackageReference "Charts" */,
+			);
 			productRefGroup = F4D288F4274BE2A200CF696A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -372,13 +399,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F46C648F27588BA300EACD0F /* ReportViewModel.swift in Sources */,
 				F47F8E24274CF5D000C0842B /* FinancialProfileModel.swift in Sources */,
 				F4220760274E260600CDCA1A /* Observable.swift in Sources */,
 				F47F8E26274CF9ED00C0842B /* InputTextfieldTableCell.swift in Sources */,
 				F4D28933274BEF0300CF696A /* ServiceTableCell.swift in Sources */,
+				F4B8EBF727565D3B0024BBB7 /* ProfileDetailsTableCell.swift in Sources */,
+				F4B8EBF927565F4F0024BBB7 /* ChartView.swift in Sources */,
 				F48BB3DA2750E97000BE5BB8 /* DatePickerTableCell.swift in Sources */,
+				F4B8EBF22755FA5D0024BBB7 /* ChartTableCell.swift in Sources */,
 				F422075E274E242E00CDCA1A /* JSONParser.swift in Sources */,
 				F48BB3DE275105A000BE5BB8 /* PickerTableCell.swift in Sources */,
+				F4B8EBF02755F9860024BBB7 /* ReportViewController.swift in Sources */,
 				F48BB3DC2750F5A100BE5BB8 /* CommonUtility.swift in Sources */,
 				F4D28901274BE2A200CF696A /* MyFinance.xcdatamodeld in Sources */,
 				F4220763274E26C400CDCA1A /* FinancialProfileViewModel.swift in Sources */,
@@ -721,6 +753,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		F40145A2275276D70051BF4A /* XCRemoteSwiftPackageReference "IQKeyboardManager" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/hackiftekhar/IQKeyboardManager.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.5.9;
+			};
+		};
+		F4B8EBF32756001E0024BBB7 /* XCRemoteSwiftPackageReference "Charts" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/danielgindi/Charts.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		F40145A3275276D70051BF4A /* IQKeyboardManagerSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F40145A2275276D70051BF4A /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;
+			productName = IQKeyboardManagerSwift;
+		};
+		F4B8EBF42756001E0024BBB7 /* Charts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F4B8EBF32756001E0024BBB7 /* XCRemoteSwiftPackageReference "Charts" */;
+			productName = Charts;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		F4D288FF274BE2A200CF696A /* MyFinance.xcdatamodeld */ = {

@@ -22,9 +22,8 @@ extension UIViewController {
     }))
     self.present(alertController, animated: true, completion: nil)
   }
+    
 }
-
-
 
 
 extension UITableViewCell: ReusableView {}
@@ -44,3 +43,31 @@ extension UITableView {
 
 }
 
+extension CGFloat {
+    static func random() -> CGFloat {
+        return CGFloat(arc4random()) / CGFloat(UInt32.max)
+    }
+}
+
+extension UIColor {
+    /// Generates random color
+    /// - Returns: UIColor generated randomly
+    static func random() -> UIColor {
+        return UIColor(
+           red:   .random(),
+           green: .random(),
+           blue:  .random(),
+           alpha: 1.0
+        )
+    }
+}
+
+
+extension UIStoryboard {
+    func instantiateVC<T: UIViewController>() -> T? {
+        if let name = NSStringFromClass(T.self).components(separatedBy: ".").last {
+            return instantiateViewController(withIdentifier: name) as? T
+        }
+        return nil
+    }
+}
