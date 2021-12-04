@@ -20,7 +20,7 @@ class InputTextfieldTableCell: UITableViewCell {
     
     func setData(financialProfileItem: FinancialProfileItemModel?) {
         if let financialProfileItem = financialProfileItem {
-            titleLabel.attributedText = (financialProfileItem.isMandatory ?? false) ? CommonUtility.getAttributedString(fromInputString: ((financialProfileItem.title ?? "") + "*"), forCharacter: "*") : NSAttributedString.init(string: financialProfileItem.title ?? "")
+            titleLabel.attributedText = (financialProfileItem.isMandatory.unwrappedValue) ? CommonUtility.getAttributedString(fromInputString: (financialProfileItem.title.unwrappedValue + "*"), forCharacter: "*") : NSAttributedString.init(string: financialProfileItem.title.unwrappedValue)
             inputTextField.text = financialProfileItem.value
             type = financialProfileItem.type
             inputTextField.keyboardType = financialProfileItem.type == .numberTextField ? .decimalPad : .default

@@ -28,7 +28,7 @@ class ReportViewController: UIViewController {
     func bindToViewModel() {
         var viewModel: ReportViewModel = ReportViewModel.init(existingProfileData: profileData)
         viewModel.updatedProfileData.bind({[weak self] responseModel in
-            self?.profileData = responseModel ?? []
+            self?.profileData = responseModel.unwrappedValue
             self?.reportTableView.reloadData()
         })
     }
@@ -53,7 +53,7 @@ extension ReportViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return (profileData[section].category == .basicProfile) ?  profileData[section].items?.count ?? 0 : 1
+        return (profileData[section].category == .basicProfile) ?  (profileData[section].items?.count).unwrappedValue : 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -84,10 +84,6 @@ extension ReportViewController: UITableViewDataSource, UITableViewDelegate {
         if let textlabel = header.textLabel {
             textlabel.font = textlabel.font.withSize(23)
         }
-    }
-    
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        50
     }
     
 }

@@ -62,7 +62,7 @@ extension UIColor {
     }
 }
 
-
+///Extending UIStoryboard, to instantiate ViewController from the storyboard it is present
 extension UIStoryboard {
     func instantiateVC<T: UIViewController>() -> T? {
         if let name = NSStringFromClass(T.self).components(separatedBy: ".").last {
@@ -70,4 +70,35 @@ extension UIStoryboard {
         }
         return nil
     }
+}
+
+
+///Extending Optional to provide default value for whatever types that confirms to 'Defaultable' protocol
+extension Optional where Wrapped: Defaultable {
+    var unwrappedValue: Wrapped { return self ?? Wrapped.defaultValue }
+}
+
+/// Returns '0' as default value if there is no integer value present
+extension Int: Defaultable {
+    static var defaultValue: Int { return 0 }
+}
+
+/// Returns empty string("") as default value if there is no string value present
+extension String: Defaultable {
+    static var defaultValue: String { return "" }
+}
+
+/// Returns empty array([]) as default value if there is no array present
+extension Array: Defaultable {
+    static var defaultValue: Array<Element> { return [] }
+}
+
+/// Returns 'false' as default value if there is no boolean value present
+extension Bool: Defaultable {
+    static var defaultValue: Bool { return false }
+}
+
+/// Returns '0' as default value if there is no double value present
+extension Double: Defaultable {
+    static var defaultValue: Double { return 0 }
 }

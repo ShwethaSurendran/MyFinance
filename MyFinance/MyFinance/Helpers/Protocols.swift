@@ -23,3 +23,8 @@ extension ReusableView {
         return String(describing: self)
     }
 }
+
+
+protocol Defaultable {
+    static var defaultValue: Self { get }
+}

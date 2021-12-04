@@ -18,10 +18,6 @@ class HomeViewController: UIViewController {
 // MARK: - TableView DataSource and Delegate methods
 extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return (view.frame.height * 0.2)
-    }
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return Constants.FinancialService.allCases.count
     }

@@ -28,7 +28,7 @@ class ChartView: UIView {
         var dataEntries = [PieChartDataEntry]()
         for (index, value) in divisions.enumerated() {
             let entry = PieChartDataEntry()
-            entry.y = value ?? 0
+            entry.y = value.unwrappedValue
             entry.label = entries[index]
             dataEntries.append( entry)
         }

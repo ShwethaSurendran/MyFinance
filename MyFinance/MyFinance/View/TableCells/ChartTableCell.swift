@@ -26,7 +26,7 @@ class ChartTableCell: UITableViewCell {
     /// Map data to be shown from the Profile details, Draws Piechart from the mapped data.
     /// - Parameter model: Profile details, from which to draw chart
     func drawChart(fromDetails model: FinancialProfileModel) {
-        let profileCategoryItems: [FinancialProfileItemModel] = model.items ?? []
+        let profileCategoryItems: [FinancialProfileItemModel] = model.items.unwrappedValue
         
         ///generate chart data
         let itemNames = profileCategoryItems.compactMap({$0.title})

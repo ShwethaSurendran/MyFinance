@@ -88,7 +88,7 @@ struct ReportViewModel {
     /// - Returns: Array of values
     func getDivisions(forCategory category: FinancialProfileCategory, from profileData: [FinancialProfileModel])-> [Double] {
         let profileModel = profileData.filter({$0.category == category}).first
-        let items: [FinancialProfileItemModel] = profileModel?.items ?? []
+        let items: [FinancialProfileItemModel] = (profileModel?.items).unwrappedValue
         return items.compactMap({Double($0.value ?? "0")})
     }
     
@@ -135,10 +135,10 @@ struct ReportViewModel {
     /// - Returns: String value indicating each insurance type and associated amount
     func getInsuranceData(forProfileDetails profileData: [FinancialProfileModel])-> String {
         let profileModel = profileData.filter({$0.category == .insurance}).first
-        let items: [FinancialProfileItemModel] = profileModel?.items ?? []
+        let items: [FinancialProfileItemModel] = (profileModel?.items).unwrappedValue
         var tip = ""
         for each in items {
-            tip += "\n" + ((each.title ?? "") + " : ₹" + ((each.value ?? "0") == "" ? "0" : (each.value ?? "0")))
+            tip += "\n" + (each.title.unwrappedValue + " : ₹" + ((each.value ?? "0") == "" ? "0" : (each.value ?? "0")))
         }
         return tip
     }

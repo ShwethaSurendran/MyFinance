@@ -35,7 +35,7 @@ class FinancialProfileViewController: UIViewController {
     func bindToViewModel() {
         var viewModel: FinancialProfileViewModel = FinancialProfileViewModel(fileNameToLoadDataFrom: currentOption == .financePlanner ? Constants.JsonFileNames.financePlannerCategories : Constants.JsonFileNames.wealthCreationCategories, jsonParser: JSONParser())
         viewModel.profileData.bind({[weak self] responseModel in
-            self?.profileData = responseModel ?? []
+            self?.profileData = responseModel.unwrappedValue
             self?.setupData()
         })
     }
@@ -54,14 +54,14 @@ class FinancialProfileViewController: UIViewController {
                 navigationController?.pushViewController(viewController, animated: true)
             }
         }else {
-            showAlert(title: "", message: "Please fill all mandatory fields", actionHandler: {})
+            showAlert(title: "", message: Constants.AlertMessage.mandatoryFieldAlert, actionHandler: {})
         }
     }
     
     func isMandatoryFieldsAreEmpty(financialProfileModel: FinancialProfileModel)-> Bool {
         guard let items = financialProfileModel.items else {return false}
         for each in items {
-            if (each.isMandatory ?? false) && ((each.value ?? "").isEmpty) {
+            if (each.isMandatory.unwrappedValue) && (each.value.unwrappedValue.isEmpty) {
                 return true
             }
         }
@@ -79,24 +79,20 @@ class FinancialProfileViewController: UIViewController {
 // MARK: - TableView DataSource and Delegate methods
 extension FinancialProfileViewController: UITableViewDataSource, UITableViewDelegate {
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100
-    }
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        (screenIndex < profileData.count) ? (profileData[screenIndex].items?.count ?? 0) : 0
+        (screenIndex < profileData.count) ? ((profileData[screenIndex].items?.count).unwrappedValue) : 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let currentItem = profileData[screenIndex].items?[indexPath.row]
         if currentItem?.type == .picker {
             let cell: PickerTableCell = tableView.dequeueReusableCell(for: indexPath)
-            cell.setData(title: currentItem?.title ?? "", pickerOptions: currentItem?.options ?? [], isMandatory: currentItem?.isMandatory ?? false)
+            cell.setData(title: (currentItem?.title).unwrappedValue, pickerOptions: (currentItem?.options).unwrappedValue, isMandatory: (currentItem?.isMandatory).unwrappedValue)
             cell.delegate = self
             return cell
         }else if currentItem?.type == .datePicker {
             let cell: DatePickerTableCell = tableView.dequeueReusableCell(for: indexPath)
-            cell.setData(title: currentItem?.title ?? "", isMandatory: currentItem?.isMandatory ?? false)
+            cell.setData(title: (currentItem?.title.unwrappedValue).unwrappedValue, isMandatory: (currentItem?.isMandatory).unwrappedValue)
             profileData[screenIndex].items?[indexPath.row].value = CommonUtility.getFormattedDate(from: Date())
             cell.delegate = self
             return cell

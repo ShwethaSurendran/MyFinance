@@ -39,11 +39,11 @@ struct FinancialProfileItemModel: Decodable {
 
     init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
-        title = try values.decodeIfPresent(String.self, forKey: .title) ?? ""
+        title = try values.decodeIfPresent(String.self, forKey: .title).unwrappedValue
         type = try values.decodeIfPresent(UIType.self, forKey: .type) ?? .stringTextField
-        options = try values.decodeIfPresent([String].self, forKey: .options) ?? []
-        value = try values.decodeIfPresent(String.self, forKey: .value) ?? ""
-        isMandatory = try values.decodeIfPresent(Bool.self, forKey: .isMandatory) ?? false
+        options = try values.decodeIfPresent([String].self, forKey: .options).unwrappedValue
+        value = try values.decodeIfPresent(String.self, forKey: .value).unwrappedValue
+        isMandatory = try values.decodeIfPresent(Bool.self, forKey: .isMandatory).unwrappedValue
     }
     
     

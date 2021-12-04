@@ -24,12 +24,12 @@ class ReportViewModelTests: XCTestCase {
     
     func testHasUpdatedProfileData() {
         let viewModel = ReportViewModel.init(existingProfileData: testProfileModel)
-        XCTAssertTrue((viewModel.updatedProfileData.value?.count ?? 0) > 1, "Updated ProfileData is empty")
+        XCTAssertTrue(((viewModel.updatedProfileData.value?.count).unwrappedValue) > 1, "Updated ProfileData is empty")
     }
     
     func testUpdatedProfileDataEmpty() {
         let viewModel = ReportViewModel.init(existingProfileData: [])
-        XCTAssertTrue((viewModel.updatedProfileData.value?.count ?? 0) == 1, "Updated ProfileData is not empty")
+        XCTAssertTrue(((viewModel.updatedProfileData.value?.count).unwrappedValue) == 1, "Updated ProfileData is not empty")
     }
     
     func testTotalAmountCalculation() {

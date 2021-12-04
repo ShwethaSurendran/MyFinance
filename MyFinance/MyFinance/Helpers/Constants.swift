@@ -17,12 +17,14 @@ struct Constants {
     struct FileExtension {
         static let json = "json"
     }
+    struct AlertMessage {
+        static let mandatoryFieldAlert = "Please fill all mandatory fields"
+    }
     enum FinancialService: String, CaseIterable {
         case financePlanner = "Financial Planner"
         case wealthCreation = "Wealth Creation"
     }
-
-
+    
 }
 
 

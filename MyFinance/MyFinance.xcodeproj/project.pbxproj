@@ -255,11 +255,11 @@
 			isa = PBXGroup;
 			children = (
 				F4FBDA63274D44C400432863 /* Constants.swift */,
+				F401457A2751E7970051BF4A /* Protocols.swift */,
 				F422075B274E1FC600CDCA1A /* Extensions.swift */,
 				F422075D274E242E00CDCA1A /* JSONParser.swift */,
 				F422075F274E260600CDCA1A /* Observable.swift */,
 				F48BB3DB2750F5A100BE5BB8 /* CommonUtility.swift */,
-				F401457A2751E7970051BF4A /* Protocols.swift */,
 				F4B8EBF827565F4F0024BBB7 /* ChartView.swift */,
 			);
 			path = Helpers;
