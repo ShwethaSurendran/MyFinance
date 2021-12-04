@@ -15,11 +15,6 @@ class ReportViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        initialSetup()
-    }
-    
-    func initialSetup() {
-        reportTableView.estimatedRowHeight = 100
         bindToViewModel()
     }
     
@@ -45,7 +40,8 @@ class ReportViewController: UIViewController {
 extension ReportViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        (profileData[indexPath.section].category == .basicProfile) ?  40 : UITableView.automaticDimension
+        ///If 'indexPath.section' is not a valid index in ProfileData, then returns '0'
+        profileData.isValidIndex(indexPath.section) ? ((profileData[indexPath.section].category == .basicProfile) ?  Constants.ReportTableProperties.basicProfileCellHeight : UITableView.automaticDimension) : 0
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -53,36 +49,38 @@ extension ReportViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return (profileData[section].category == .basicProfile) ?  (profileData[section].items?.count).unwrappedValue : 1
+        ///If 'section' is not a valid index in ProfileData, then returns '0'
+        profileData.isValidIndex(section) ? ((profileData[section].category == .basicProfile) ?  (profileData[section].items?.count).unwrappedValue : Constants.ReportTableProperties.chartSectionRowCount) : 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if profileData[indexPath.section].category == .basicProfile {
-            let cell: ProfileDetailsTableCell = tableView.dequeueReusableCell(for: indexPath)
-            if indexPath.section < profileData.count {
-                let profileDataModel: FinancialProfileModel = profileData[indexPath.section]
-                if let items = profileDataModel.items, indexPath.row < items.count {
+        if profileData.isValidIndex(indexPath.section) {
+            let profileDataModel: FinancialProfileModel = profileData[indexPath.section]
+            switch profileDataModel.category {
+            case .basicProfile:
+                let cell: ProfileDetailsTableCell = tableView.dequeueReusableCell(for: indexPath)
+                if let items = profileDataModel.items, items.isValidIndex(indexPath.row) {
                     cell.setData(item: items[indexPath.row])
                 }
+                return cell
+            default:
+                let cell: ChartTableCell = tableView.dequeueReusableCell(for: indexPath)
+                cell.setData(model: profileDataModel)
+                return cell
             }
-            return cell
-        }else {
-            let cell: ChartTableCell = tableView.dequeueReusableCell(for: indexPath)
-            cell.setData(model: profileData[indexPath.section])
-            return cell
         }
+        return UITableViewCell()
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        profileData[section].category?.rawValue
+        profileData.isValidIndex(section) ? profileData[section].category?.rawValue : ""
     }
     
     func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
-        
-        let header = view as! UITableViewHeaderFooterView
-        
-        if let textlabel = header.textLabel {
-            textlabel.font = textlabel.font.withSize(23)
+        let header = view as? UITableViewHeaderFooterView
+        if let textlabel = header?.textLabel {
+            ///Setting section header font size.
+            textlabel.font = textlabel.font.withSize(Constants.ReportTableProperties.sectionHeaderFontSize)
         }
     }
     

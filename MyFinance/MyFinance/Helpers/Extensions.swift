@@ -43,11 +43,13 @@ extension UITableView {
 
 }
 
+
 extension CGFloat {
     static func random() -> CGFloat {
         return CGFloat(arc4random()) / CGFloat(UInt32.max)
     }
 }
+
 
 extension UIColor {
     /// Generates random color
@@ -61,6 +63,7 @@ extension UIColor {
         )
     }
 }
+
 
 ///Extending UIStoryboard, to instantiate ViewController from the storyboard it is present
 extension UIStoryboard {
@@ -78,27 +81,41 @@ extension Optional where Wrapped: Defaultable {
     var unwrappedValue: Wrapped { return self ?? Wrapped.defaultValue }
 }
 
+
 /// Returns '0' as default value if there is no integer value present
 extension Int: Defaultable {
     static var defaultValue: Int { return 0 }
 }
+
 
 /// Returns empty string("") as default value if there is no string value present
 extension String: Defaultable {
     static var defaultValue: String { return "" }
 }
 
+
 /// Returns empty array([]) as default value if there is no array present
 extension Array: Defaultable {
     static var defaultValue: Array<Element> { return [] }
 }
+
 
 /// Returns 'false' as default value if there is no boolean value present
 extension Bool: Defaultable {
     static var defaultValue: Bool { return false }
 }
 
+
 /// Returns '0' as default value if there is no double value present
 extension Double: Defaultable {
     static var defaultValue: Double { return 0 }
+}
+
+
+///Check if Array contains given index
+extension Array {
+    func isValidIndex(_ index : Int) -> Bool {
+        guard index >= 0 else {return false}
+        return index < self.count
+    }
 }

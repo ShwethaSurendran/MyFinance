@@ -24,13 +24,14 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: ServiceTableCell = tableView.dequeueReusableCell(for: indexPath)
-        cell.setData(serviceName: Constants.FinancialService.allCases[indexPath.row].rawValue)
+        Constants.FinancialService.allCases.isValidIndex(indexPath.row) ?
+            cell.setData(serviceName: Constants.FinancialService.allCases[indexPath.row].rawValue): nil
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let viewController : FinancialProfileViewController = UIStoryboard(name: Constants.Storyboard.main, bundle: nil).instantiateVC() else {return}
-        viewController.currentOption = Constants.FinancialService.allCases[indexPath.row]
+        Constants.FinancialService.allCases.isValidIndex(indexPath.row) ? viewController.currentOption = Constants.FinancialService.allCases[indexPath.row] : nil
         navigationController?.pushViewController(viewController, animated: true)
     }
     
