@@ -11,6 +11,26 @@ struct FinancialProfileModel: Decodable {
     var category: FinancialProfileCategory?
     var items: [FinancialProfileItemModel]?
     var tip: String?
+    
+    init(category: FinancialProfileCategory, items: [FinancialProfileItemModel], tip: String) {
+        self.category = category
+        self.items = items
+        self.tip = tip
+    }
+    
+    enum CodingKeys: String, CodingKey {
+        case category = "category"
+        case items = "items"
+        case tip = "tip"
+    }
+    
+    init(from decoder: Decoder) throws {
+        let values = try decoder.container(keyedBy: CodingKeys.self)
+        category = try values.decodeIfPresent(FinancialProfileCategory.self, forKey: .category)
+        items = try values.decodeIfPresent([FinancialProfileItemModel].self, forKey: .items) ?? []
+        tip = try values.decodeIfPresent(String.self, forKey: .tip).unwrappedValue
+    }
+    
 }
 
 struct FinancialProfileItemModel: Decodable {
@@ -36,7 +56,7 @@ struct FinancialProfileItemModel: Decodable {
         case value = "value"
         case isMandatory = "isMandatory"
     }
-
+    
     init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         title = try values.decodeIfPresent(String.self, forKey: .title).unwrappedValue
@@ -45,7 +65,6 @@ struct FinancialProfileItemModel: Decodable {
         value = try values.decodeIfPresent(String.self, forKey: .value).unwrappedValue
         isMandatory = try values.decodeIfPresent(Bool.self, forKey: .isMandatory).unwrappedValue
     }
-    
     
 }
 

@@ -44,13 +44,13 @@ class ReportViewModelTests: XCTestCase {
     
     func testIncomeIsGood() {
         let isGoodIncome = reportViewModel?.isGoodIncomeOrAssetAllocation(forProfileDetails: testProfileModel, category: .income)
-        XCTAssertTrue(isGoodIncome == true, "There is no multiple ways for income")
+        XCTAssertTrue(isGoodIncome == true, "There is no multiple source of income")
     }
     
     func testIncomeIsNotGood() {
         let profileModel = [FinancialProfileModel.init(category: .income, items: [FinancialProfileItemModel(title: nil, type: nil, options: nil, value: "5", isMandatory: nil)], tip: nil)]
         let isGoodIncome = reportViewModel?.isGoodIncomeOrAssetAllocation(forProfileDetails: profileModel, category: .income)
-        XCTAssertTrue(isGoodIncome == false, "There are multiple ways for income")
+        XCTAssertTrue(isGoodIncome == false, "There are no multiple source of income")
     }
     
     func testAssetAllocationIsGood() {

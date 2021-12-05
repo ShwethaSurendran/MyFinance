@@ -17,7 +17,7 @@ struct Observable<T> {
     /// Calls listener method when changing value
     var value: T {
         didSet {
-           listener?(value)
+            listener?(value)
         }
     }
     

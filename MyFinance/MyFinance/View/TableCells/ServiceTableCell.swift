@@ -10,7 +10,7 @@ import UIKit
 class ServiceTableCell: UITableViewCell {
     
     @IBOutlet weak var serviceNameLabel: UILabel!
-
+    
     override func awakeFromNib() {
         super.awakeFromNib()
     }
@@ -18,5 +18,5 @@ class ServiceTableCell: UITableViewCell {
     func setData(serviceName: String) {
         serviceNameLabel.text = serviceName
     }
-
+    
 }

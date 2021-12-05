@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ReportViewController: UIViewController {
+final class ReportViewController: UIViewController {
     
     @IBOutlet weak var reportTableView: UITableView!
     
@@ -20,7 +20,7 @@ class ReportViewController: UIViewController {
     
     /// Bind to updatedProfileData property of viewModel
     /// Update UI, when there is an update in updatedProfileData property
-    func bindToViewModel() {
+    private func bindToViewModel() {
         var viewModel: ReportViewModel = ReportViewModel.init(existingProfileData: profileData)
         viewModel.updatedProfileData.bind({[weak self] responseModel in
             self?.profileData = responseModel.unwrappedValue

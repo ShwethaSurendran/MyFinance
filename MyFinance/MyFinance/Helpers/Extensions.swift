@@ -15,13 +15,13 @@ extension UIViewController {
     ///   - message: Alert message
     ///   - actionHandler: Action to be done on alert action
     func showAlert(title: String, message: String, actionHandler: @escaping() -> Void) {
-    let alertController = UIAlertController(title: title, message:
-      message, preferredStyle: .alert)
-    alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: {action in
-        actionHandler()
-    }))
-    self.present(alertController, animated: true, completion: nil)
-  }
+        let alertController = UIAlertController(title: title, message:
+                                                    message, preferredStyle: .alert)
+        alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: {action in
+            actionHandler()
+        }))
+        self.present(alertController, animated: true, completion: nil)
+    }
     
 }
 
@@ -40,7 +40,7 @@ extension UITableView {
         cell.tag = indexPath.row
         return cell
     }
-
+    
 }
 
 
@@ -56,10 +56,10 @@ extension UIColor {
     /// - Returns: UIColor generated randomly
     static func random() -> UIColor {
         return UIColor(
-           red:   .random(),
-           green: .random(),
-           blue:  .random(),
-           alpha: 1.0
+            red:   .random(),
+            green: .random(),
+            blue:  .random(),
+            alpha: 1.0
         )
     }
 }
@@ -68,7 +68,7 @@ extension UIColor {
 ///Extending UIStoryboard, to instantiate ViewController from the storyboard it is present
 extension UIStoryboard {
     func instantiateVC<T: UIViewController>() -> T? {
-        if let name = NSStringFromClass(T.self).components(separatedBy: ".").last {
+        if let name = NSStringFromClass(T.self).components(separatedBy: Constants.dotString).last {
             return instantiateViewController(withIdentifier: name) as? T
         }
         return nil

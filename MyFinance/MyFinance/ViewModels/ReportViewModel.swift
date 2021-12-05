@@ -24,7 +24,7 @@ struct ReportViewModel {
             profileData[index].tip = tipMessage
         }
         
-        let emergencyFundData = FinancialProfileModel(category: .emergencyPlanning, items: [], tip: "Put 6 months of your expense into a short term debt instrument. \nRecomme...........")
+        let emergencyFundData = FinancialProfileModel(category: .emergencyPlanning, items: [], tip: Constants.ReportCategoryTip.emergencyFund)
         profileData.append(emergencyFundData)
         updatedProfileData.value = profileData
     }
@@ -38,32 +38,32 @@ struct ReportViewModel {
         guard let category = category else {
             return ""
         }
-        var tip = "\nTotal \(category.rawValue) : ₹\(getTotalAmount(forCategory:category, from: profileData))\n"
+        var tip = "\n\(Constants.ReportLabel.total) \(category.rawValue) : ₹\(getTotalAmount(forCategory:category, from: profileData))\n"
         switch category {
         case .income:
             if !isGoodIncomeOrAssetAllocation(forProfileDetails: profileData, category: .income) {
-                tip += "\nDiversify your source of income.\n"
+                tip += Constants.ReportCategoryTip.singleSourceOfIncome
             }
             return tip
         case .expenses:
             if !isGoodExpenseRatio(forProfileDetails: profileData) {
-                return (tip + "\nLimit your expense\nFollow 50:30:20 rule \n 50% of Income for expense \n 30% of Income for long term goals \n 20% of Income for short term goals\n")
+                return (tip + Constants.ReportCategoryTip.moreExpenseRatio)
             }
             return tip
         case .liabilities:
             return tip
         case .assets:
-            tip += "\nTotal NetWorth : ₹\(getTotalNetWorth(forProfileDetails: profileData))\n"
+            tip += "\n\(Constants.ReportLabel.totalNetWorth) : ₹\(getTotalNetWorth(forProfileDetails: profileData))\n"
             if !isGoodIncomeOrAssetAllocation(forProfileDetails: profileData, category: .assets) {
-                tip += "\nDiversify your asset allocations.\n"
+                tip += Constants.ReportCategoryTip.singleAssetAllocation
             }
             return tip
         case .insurance:
             tip = getInsuranceData(forProfileDetails: profileData)
             if !isGoodInsuranceSubscription(forProfileDetails: profileData) {
-                tip += "\nTake a term life insurance 15-20 times of your annual income.\nTake Health insurance of 10-15 lakhs, Add a super topup.\n"
+                tip += Constants.ReportCategoryTip.noInsuranceSubscription
             }else {
-                tip += "\n\nHuraay.... you already purchased 👍"
+                tip += Constants.ReportCategoryTip.haveInsuranceSubscription
             }
             return tip
         default:
@@ -89,7 +89,7 @@ struct ReportViewModel {
     func getDivisions(forCategory category: FinancialProfileCategory, from profileData: [FinancialProfileModel])-> [Double] {
         let profileModel = profileData.filter({$0.category == category}).first
         let items: [FinancialProfileItemModel] = (profileModel?.items).unwrappedValue
-        return items.compactMap({Double($0.value ?? "0")})
+        return items.compactMap({Double($0.value ?? Constants.ChartValue.defaultAmount)})
     }
     
     /// Check if Income/Asset allocations are good enough
@@ -110,8 +110,8 @@ struct ReportViewModel {
     func isGoodExpenseRatio(forProfileDetails profileData: [FinancialProfileModel])-> Bool {
         let totalExpense = getTotalAmount(forCategory: .expenses, from: profileData)
         let totalIncome = getTotalAmount(forCategory: .income, from: profileData)
-        let correctExpenseRatio = totalIncome * 0.5
-        return totalExpense > correctExpenseRatio ? false : true
+        let correctExpenseRatio = totalIncome * Constants.ChartValue.expenseRatio
+        return !(totalExpense > correctExpenseRatio)
     }
     
     /// Calculate total networth of the User from asset allocations and liabilities
@@ -138,7 +138,7 @@ struct ReportViewModel {
         let items: [FinancialProfileItemModel] = (profileModel?.items).unwrappedValue
         var tip = ""
         for each in items {
-            tip += "\n" + (each.title.unwrappedValue + " : ₹" + ((each.value ?? "0") == "" ? "0" : (each.value ?? "0")))
+            tip += "\n" + (each.title.unwrappedValue + " : ₹" + ((each.value ?? Constants.ChartValue.defaultAmount) == "" ? Constants.ChartValue.defaultAmount : (each.value ?? Constants.ChartValue.defaultAmount)))
         }
         return tip
     }

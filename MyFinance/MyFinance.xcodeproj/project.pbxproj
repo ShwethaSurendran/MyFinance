@@ -26,18 +26,15 @@
 		F4B8EBF22755FA5D0024BBB7 /* ChartTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B8EBF12755FA5D0024BBB7 /* ChartTableCell.swift */; };
 		F4B8EBF52756001E0024BBB7 /* Charts in Frameworks */ = {isa = PBXBuildFile; productRef = F4B8EBF42756001E0024BBB7 /* Charts */; };
 		F4B8EBF727565D3B0024BBB7 /* ProfileDetailsTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B8EBF627565D3B0024BBB7 /* ProfileDetailsTableCell.swift */; };
-		F4B8EBF927565F4F0024BBB7 /* ChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B8EBF827565F4F0024BBB7 /* ChartView.swift */; };
 		F4D288F7274BE2A200CF696A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D288F6274BE2A200CF696A /* AppDelegate.swift */; };
 		F4D288F9274BE2A200CF696A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D288F8274BE2A200CF696A /* SceneDelegate.swift */; };
 		F4D288FE274BE2A200CF696A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4D288FC274BE2A200CF696A /* Main.storyboard */; };
-		F4D28901274BE2A200CF696A /* MyFinance.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F4D288FF274BE2A200CF696A /* MyFinance.xcdatamodeld */; };
 		F4D28903274BE2A300CF696A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4D28902274BE2A300CF696A /* Assets.xcassets */; };
 		F4D28906274BE2A300CF696A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4D28904274BE2A300CF696A /* LaunchScreen.storyboard */; };
 		F4D2891C274BE2A300CF696A /* MyFinanceUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D2891B274BE2A300CF696A /* MyFinanceUITests.swift */; };
 		F4D28930274BE42100CF696A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D2892F274BE42100CF696A /* HomeViewController.swift */; };
 		F4D28933274BEF0300CF696A /* ServiceTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D28932274BEF0300CF696A /* ServiceTableCell.swift */; };
 		F4E6C0F1274CED3200469AB3 /* FinancePlannerCategories.json in Resources */ = {isa = PBXBuildFile; fileRef = F4E6C0F0274CED3200469AB3 /* FinancePlannerCategories.json */; };
-		F4FBDA5D274D37B100432863 /* WealthCreationCategories.json in Resources */ = {isa = PBXBuildFile; fileRef = F4FBDA5C274D37B100432863 /* WealthCreationCategories.json */; };
 		F4FBDA61274D3DDB00432863 /* FinancialProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FBDA60274D3DDB00432863 /* FinancialProfileViewController.swift */; };
 		F4FBDA64274D44C400432863 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FBDA63274D44C400432863 /* Constants.swift */; };
 /* End PBXBuildFile section */
@@ -77,12 +74,10 @@
 		F4B8EBEF2755F9860024BBB7 /* ReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportViewController.swift; sourceTree = "<group>"; };
 		F4B8EBF12755FA5D0024BBB7 /* ChartTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartTableCell.swift; sourceTree = "<group>"; };
 		F4B8EBF627565D3B0024BBB7 /* ProfileDetailsTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileDetailsTableCell.swift; sourceTree = "<group>"; };
-		F4B8EBF827565F4F0024BBB7 /* ChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartView.swift; sourceTree = "<group>"; };
 		F4D288F3274BE2A200CF696A /* MyFinance.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyFinance.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4D288F6274BE2A200CF696A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F4D288F8274BE2A200CF696A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		F4D288FD274BE2A200CF696A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		F4D28900274BE2A200CF696A /* MyFinance.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MyFinance.xcdatamodel; sourceTree = "<group>"; };
 		F4D28902274BE2A300CF696A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F4D28905274BE2A300CF696A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F4D28907274BE2A300CF696A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -94,7 +89,6 @@
 		F4D2892F274BE42100CF696A /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		F4D28932274BEF0300CF696A /* ServiceTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceTableCell.swift; sourceTree = "<group>"; };
 		F4E6C0F0274CED3200469AB3 /* FinancePlannerCategories.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = FinancePlannerCategories.json; sourceTree = "<group>"; };
-		F4FBDA5C274D37B100432863 /* WealthCreationCategories.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = WealthCreationCategories.json; sourceTree = "<group>"; };
 		F4FBDA60274D3DDB00432863 /* FinancialProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FinancialProfileViewController.swift; sourceTree = "<group>"; };
 		F4FBDA63274D44C400432863 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -138,7 +132,6 @@
 		F4220758274E0F1C00CDCA1A /* JSONFiles */ = {
 			isa = PBXGroup;
 			children = (
-				F4FBDA5C274D37B100432863 /* WealthCreationCategories.json */,
 				F4E6C0F0274CED3200469AB3 /* FinancePlannerCategories.json */,
 			);
 			path = JSONFiles;
@@ -184,7 +177,6 @@
 				F4220761274E269D00CDCA1A /* ViewModels */,
 				F4220757274E0EFF00CDCA1A /* Resources */,
 				F4FBDA62274D44B100432863 /* Helpers */,
-				F4D288FF274BE2A200CF696A /* MyFinance.xcdatamodeld */,
 			);
 			path = MyFinance;
 			sourceTree = "<group>";
@@ -214,8 +206,8 @@
 			children = (
 				F4D28904274BE2A300CF696A /* LaunchScreen.storyboard */,
 				F4D288FC274BE2A200CF696A /* Main.storyboard */,
-				F4D28931274BEEA000CF696A /* TableCells */,
 				F4D2892E274BE40B00CF696A /* ViewControllers */,
+				F4D28931274BEEA000CF696A /* TableCells */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -260,7 +252,6 @@
 				F422075D274E242E00CDCA1A /* JSONParser.swift */,
 				F422075F274E260600CDCA1A /* Observable.swift */,
 				F48BB3DB2750F5A100BE5BB8 /* CommonUtility.swift */,
-				F4B8EBF827565F4F0024BBB7 /* ChartView.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -377,7 +368,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				F4D28906274BE2A300CF696A /* LaunchScreen.storyboard in Resources */,
-				F4FBDA5D274D37B100432863 /* WealthCreationCategories.json in Resources */,
 				F4D28903274BE2A300CF696A /* Assets.xcassets in Resources */,
 				F4D288FE274BE2A200CF696A /* Main.storyboard in Resources */,
 				F4E6C0F1274CED3200469AB3 /* FinancePlannerCategories.json in Resources */,
@@ -411,14 +401,12 @@
 				F47F8E26274CF9ED00C0842B /* InputTextfieldTableCell.swift in Sources */,
 				F4D28933274BEF0300CF696A /* ServiceTableCell.swift in Sources */,
 				F4B8EBF727565D3B0024BBB7 /* ProfileDetailsTableCell.swift in Sources */,
-				F4B8EBF927565F4F0024BBB7 /* ChartView.swift in Sources */,
 				F48BB3DA2750E97000BE5BB8 /* DatePickerTableCell.swift in Sources */,
 				F4B8EBF22755FA5D0024BBB7 /* ChartTableCell.swift in Sources */,
 				F422075E274E242E00CDCA1A /* JSONParser.swift in Sources */,
 				F48BB3DE275105A000BE5BB8 /* PickerTableCell.swift in Sources */,
 				F4B8EBF02755F9860024BBB7 /* ReportViewController.swift in Sources */,
 				F48BB3DC2750F5A100BE5BB8 /* CommonUtility.swift in Sources */,
-				F4D28901274BE2A200CF696A /* MyFinance.xcdatamodeld in Sources */,
 				F4220763274E26C400CDCA1A /* FinancialProfileViewModel.swift in Sources */,
 				F4D288F7274BE2A200CF696A /* AppDelegate.swift in Sources */,
 				F4D288F9274BE2A200CF696A /* SceneDelegate.swift in Sources */,
@@ -793,19 +781,6 @@
 			productName = Charts;
 		};
 /* End XCSwiftPackageProductDependency section */
-
-/* Begin XCVersionGroup section */
-		F4D288FF274BE2A200CF696A /* MyFinance.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				F4D28900274BE2A200CF696A /* MyFinance.xcdatamodel */,
-			);
-			currentVersion = F4D28900274BE2A200CF696A /* MyFinance.xcdatamodel */;
-			path = MyFinance.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = F4D288EB274BE2A200CF696A /* Project object */;
 }

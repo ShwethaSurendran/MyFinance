@@ -24,7 +24,7 @@ extension ReusableView {
     }
 }
 
-
+///Protocol defining default value for optionals
 protocol Defaultable {
     static var defaultValue: Self { get }
 }

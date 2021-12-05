@@ -18,7 +18,7 @@ class DatePickerTableCell: UITableViewCell {
     }
 
     func setData(title: String, isMandatory: Bool) {
-        titleLabel.attributedText = isMandatory ? CommonUtility.getAttributedString(fromInputString: (title + "*"), forCharacter: "*") : NSAttributedString.init(string: title)
+        titleLabel.attributedText = CommonUtility.getMandatoryFieldTitle(isMandatory: isMandatory, title: title)
     }
     
     /// Calls this method when picking date from DatePicker

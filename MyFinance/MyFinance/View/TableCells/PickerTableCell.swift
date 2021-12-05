@@ -14,7 +14,7 @@ class PickerTableCell: UITableViewCell {
     @IBOutlet weak var picker: UIPickerView!
     var delegate: ProfileDataUpdateProtocol?
     var options: [String] = []
-
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -22,7 +22,7 @@ class PickerTableCell: UITableViewCell {
     }
     
     func setData(title: String, pickerOptions: [String], isMandatory: Bool) {
-        titleLabel.attributedText = isMandatory ? CommonUtility.getAttributedString(fromInputString: (title + "*"), forCharacter: "*") : NSAttributedString.init(string: title)
+        titleLabel.attributedText = CommonUtility.getMandatoryFieldTitle(isMandatory: isMandatory, title: title)
         options = pickerOptions
     }
     
@@ -42,7 +42,7 @@ extension PickerTableCell: UIPickerViewDataSource, UIPickerViewDelegate {
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         options.count
     }
-
+    
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         selectedItemButton.setTitle(options[row], for: .normal)
         delegate?.updateValue(value: options[row], index: self.tag)
@@ -53,5 +53,5 @@ extension PickerTableCell: UIPickerViewDataSource, UIPickerViewDelegate {
     func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
         return NSAttributedString(string: options[row], attributes: [NSAttributedString.Key.foregroundColor : UIColor.white])
     }
-
+    
 }

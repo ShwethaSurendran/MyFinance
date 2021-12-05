@@ -7,13 +7,13 @@
 
 import UIKit
 
-class FinancialProfileViewController: UIViewController {
+final class FinancialProfileViewController: UIViewController {
     
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var profileDetailsTableview: UITableView!
     
-    var profileData: [FinancialProfileModel] = []
-    var screenIndex = 0
+    private var profileData: [FinancialProfileModel] = []
+    private var screenIndex = 0
     var currentOption: Constants.FinancialService = .financePlanner
     
     
@@ -25,7 +25,7 @@ class FinancialProfileViewController: UIViewController {
     }
     
     /// setup UI data
-    func setupData() {
+    private func setupData() {
         if profileData.count > 0, profileData.isValidIndex(screenIndex) {
             titleLabel.text = profileData[screenIndex].category?.rawValue
             profileDetailsTableview.reloadData()
@@ -34,7 +34,7 @@ class FinancialProfileViewController: UIViewController {
     
     /// Bind to profileData property of viewModel
     /// Update UI, when there is an update in profileData property
-    func bindToViewModel() {
+    private func bindToViewModel() {
         let jsonFileName = currentOption == .financePlanner ? Constants.JsonFileNames.financePlannerCategories : Constants.JsonFileNames.wealthCreationCategories
         var viewModel: FinancialProfileViewModel = FinancialProfileViewModel(fileNameToLoadDataFrom: jsonFileName, jsonParser: JSONParser())
         viewModel.profileData.bind({[weak self] responseModel in
@@ -45,7 +45,7 @@ class FinancialProfileViewController: UIViewController {
     
     @IBAction func onClickSubmit(_ sender: Any) {
         ///On submit, Check if mandatory fields are filled
-        if !isMandatoryFieldsAreEmpty(financialProfileModel: profileData[screenIndex]) {
+        if profileData.isValidIndex(screenIndex),!isMandatoryFieldsAreEmpty(financialProfileModel: profileData[screenIndex]) {
             if profileData.isValidIndex(screenIndex+1) {
                 ///Navigates to new screen by passing index of next details to be shown
                 navigateToNextProfileCategoryScreen()
@@ -60,7 +60,7 @@ class FinancialProfileViewController: UIViewController {
     }
     
     ///Navigate to next profile category screen
-    func navigateToNextProfileCategoryScreen() {
+    private func navigateToNextProfileCategoryScreen() {
         guard let viewController : FinancialProfileViewController = UIStoryboard(name: Constants.Storyboard.main, bundle: nil).instantiateVC() else {return}
         viewController.screenIndex = screenIndex+1
         viewController.profileData = profileData
@@ -68,7 +68,7 @@ class FinancialProfileViewController: UIViewController {
     }
     
     //Navigate to Financial Report screen
-    func navigateToReportScreen() {
+    private func navigateToReportScreen() {
         guard let viewController : ReportViewController = UIStoryboard(name: Constants.Storyboard.main, bundle: nil).instantiateVC() else {return}
         viewController.profileData = profileData
         navigationController?.pushViewController(viewController, animated: true)

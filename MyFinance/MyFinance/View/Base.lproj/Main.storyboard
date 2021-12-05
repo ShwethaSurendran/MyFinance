@@ -471,7 +471,7 @@
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="oNY-Rb-oL8">
                                                             <rect key="frame" x="5" y="5" width="394" height="510"/>
                                                             <subviews>
-                                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oWd-ny-yM6">
+                                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oWd-ny-yM6" customClass="PieChartView" customModule="Charts">
                                                                     <rect key="frame" x="0.0" y="0.0" width="394" height="500"/>
                                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <constraints>
@@ -506,7 +506,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="chartView" destination="oWd-ny-yM6" id="JPf-Sm-zYz"/>
+                                            <outlet property="chartView" destination="oWd-ny-yM6" id="TYm-Iz-bJ1"/>
                                             <outlet property="tipLabel" destination="XMQ-8N-ccH" id="HeT-AS-MBn"/>
                                         </connections>
                                     </tableViewCell>
