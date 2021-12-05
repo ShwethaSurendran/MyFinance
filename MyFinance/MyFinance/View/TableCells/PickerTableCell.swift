@@ -33,6 +33,7 @@ class PickerTableCell: UITableViewCell {
 }
 
 
+// MARK: - UIPickerView Delegate and DataSource methods
 extension PickerTableCell: UIPickerViewDataSource, UIPickerViewDelegate {
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {

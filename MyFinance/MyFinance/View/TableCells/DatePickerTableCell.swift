@@ -16,7 +16,7 @@ class DatePickerTableCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
     }
-
+    
     func setData(title: String, isMandatory: Bool) {
         titleLabel.attributedText = CommonUtility.getMandatoryFieldTitle(isMandatory: isMandatory, title: title)
     }

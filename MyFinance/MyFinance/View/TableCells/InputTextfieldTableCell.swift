@@ -40,6 +40,7 @@ class InputTextfieldTableCell: UITableViewCell {
     
 }
 
+
 // MARK: - TextField Delegate methods
 extension InputTextfieldTableCell: UITextFieldDelegate {
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {

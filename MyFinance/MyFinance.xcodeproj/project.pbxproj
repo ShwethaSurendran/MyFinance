@@ -35,6 +35,7 @@
 		F4D28930274BE42100CF696A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D2892F274BE42100CF696A /* HomeViewController.swift */; };
 		F4D28933274BEF0300CF696A /* ServiceTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D28932274BEF0300CF696A /* ServiceTableCell.swift */; };
 		F4E6C0F1274CED3200469AB3 /* FinancePlannerCategories.json in Resources */ = {isa = PBXBuildFile; fileRef = F4E6C0F0274CED3200469AB3 /* FinancePlannerCategories.json */; };
+		F4EA27BC275D334B007D59DD /* ChartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EA27BB275D334B007D59DD /* ChartViewModel.swift */; };
 		F4FBDA61274D3DDB00432863 /* FinancialProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FBDA60274D3DDB00432863 /* FinancialProfileViewController.swift */; };
 		F4FBDA64274D44C400432863 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FBDA63274D44C400432863 /* Constants.swift */; };
 /* End PBXBuildFile section */
@@ -89,6 +90,7 @@
 		F4D2892F274BE42100CF696A /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		F4D28932274BEF0300CF696A /* ServiceTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceTableCell.swift; sourceTree = "<group>"; };
 		F4E6C0F0274CED3200469AB3 /* FinancePlannerCategories.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = FinancePlannerCategories.json; sourceTree = "<group>"; };
+		F4EA27BB275D334B007D59DD /* ChartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartViewModel.swift; sourceTree = "<group>"; };
 		F4FBDA60274D3DDB00432863 /* FinancialProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FinancialProfileViewController.swift; sourceTree = "<group>"; };
 		F4FBDA63274D44C400432863 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -142,6 +144,7 @@
 			children = (
 				F4220762274E26C400CDCA1A /* FinancialProfileViewModel.swift */,
 				F46C648E27588BA300EACD0F /* ReportViewModel.swift */,
+				F4EA27BB275D334B007D59DD /* ChartViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -401,6 +404,7 @@
 				F47F8E26274CF9ED00C0842B /* InputTextfieldTableCell.swift in Sources */,
 				F4D28933274BEF0300CF696A /* ServiceTableCell.swift in Sources */,
 				F4B8EBF727565D3B0024BBB7 /* ProfileDetailsTableCell.swift in Sources */,
+				F4EA27BC275D334B007D59DD /* ChartViewModel.swift in Sources */,
 				F48BB3DA2750E97000BE5BB8 /* DatePickerTableCell.swift in Sources */,
 				F4B8EBF22755FA5D0024BBB7 /* ChartTableCell.swift in Sources */,
 				F422075E274E242E00CDCA1A /* JSONParser.swift in Sources */,
