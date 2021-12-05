@@ -12,7 +12,6 @@ class ChartTableCell: UITableViewCell {
     
     @IBOutlet weak var tipLabel: UILabel!
     @IBOutlet weak var chartView: PieChartView!
-    //    @IBOutlet weak var chartView: UIView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -38,7 +37,9 @@ class ChartTableCell: UITableViewCell {
         let profileCategoryItems: [FinancialProfileItemModel] = model.items.unwrappedValue
         
         ///generate chart data
-        let itemNames = profileCategoryItems.compactMap({$0.title})
+        let itemNames = profileCategoryItems.compactMap({model in
+            model.value == "" ? nil : model.title
+        })
         let divisions = profileCategoryItems.compactMap({Double($0.value ?? Constants.ChartValue.defaultAmount)})
         
         if divisions.count > 0 && !(model.category == .insurance) {

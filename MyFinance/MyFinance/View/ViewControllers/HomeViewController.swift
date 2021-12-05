@@ -32,7 +32,7 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let viewController : FinancialProfileViewController = UIStoryboard(name: Constants.Storyboard.main, bundle: nil).instantiateVC() else {return}
         Constants.FinancialService.allCases.isValidIndex(indexPath.row) ? viewController.currentOption = Constants.FinancialService.allCases[indexPath.row] : nil
-        navigationController?.pushViewController(viewController, animated: true)
+        navigationController?.pushViewController(viewController, animated: false)
     }
     
 }

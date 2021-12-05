@@ -77,8 +77,8 @@ enum UIType: String, Decodable {
 
 enum FinancialProfileCategory: String, Decodable {
     case basicProfile = "BasicProfile"
-    case income = "Income"
-    case expenses = "Expenses"
+    case income = "Income(Yearly)"
+    case expenses = "Expenses(Yearly)"
     case assets = "Assets"
     case liabilities = "Liabilities"
     case insurance = "Insurance"

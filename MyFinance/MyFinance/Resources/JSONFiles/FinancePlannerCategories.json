@@ -61,7 +61,7 @@
         ]
     },
     {
-        "category": "Income",
+        "category": "Income(Yearly)",
         "items": [
             {
                 "title":"Income from Salary",
@@ -96,7 +96,7 @@
         ]
     },
     {
-        "category": "Expenses",
+        "category": "Expenses(Yearly)",
         "items": [
             {
                 "title":"House Hold Exp",
@@ -125,6 +125,21 @@
             },
             {
                 "title":"Other Exp",
+                "type":"numberTextField",
+                "value":""
+            }
+        ]
+    },
+    {
+        "category": "Liabilities",
+        "items": [
+            {
+                "title":"Home Loan",
+                "type":"numberTextField",
+                "value":""
+            },
+            {
+                "title":"Other Liabilities",
                 "type":"numberTextField",
                 "value":""
             }
@@ -160,21 +175,6 @@
             },
             {
                 "title":"RealEstate, Gold and Others",
-                "type":"numberTextField",
-                "value":""
-            }
-        ]
-    },
-    {
-        "category": "Liabilities",
-        "items": [
-            {
-                "title":"Home Loan",
-                "type":"numberTextField",
-                "value":""
-            },
-            {
-                "title":"Other Liabilities",
                 "type":"numberTextField",
                 "value":""
             }
