@@ -11,7 +11,7 @@ import XCTest
 class ReportViewModelTests: XCTestCase {
     
     var reportViewModel: ReportViewModel?
-    let testProfileModel = [FinancialProfileModel.init(category: .income, items: [FinancialProfileItemModel(title: nil, type: nil, options: nil, value: "5", isMandatory: nil), FinancialProfileItemModel(title: nil, type: nil, options: nil, value: "5", isMandatory: nil)], tip: nil)]
+    let testProfileModel = [FinancialProfileModel.init(category: .income, items: [FinancialProfileItemModel(title: nil, type: nil, options: nil, value: "5", isMandatory: nil), FinancialProfileItemModel(title: nil, type: nil, options: nil, value: "5", isMandatory: nil)], tip: "")]
 
     
     override func setUpWithError() throws {
@@ -48,52 +48,52 @@ class ReportViewModelTests: XCTestCase {
     }
     
     func testIncomeIsNotGood() {
-        let profileModel = [FinancialProfileModel.init(category: .income, items: [FinancialProfileItemModel(title: nil, type: nil, options: nil, value: "5", isMandatory: nil)], tip: nil)]
+        let profileModel = [FinancialProfileModel.init(category: .income, items: [FinancialProfileItemModel(title: nil, type: .stringTextField, options: nil, value: "5", isMandatory: nil)], tip: "")]
         let isGoodIncome = reportViewModel?.isGoodIncomeOrAssetAllocation(forProfileDetails: profileModel, category: .income)
         XCTAssertTrue(isGoodIncome == false, "There are no multiple source of income")
     }
     
     func testAssetAllocationIsGood() {
-        let profileModel = [FinancialProfileModel.init(category: .assets, items: [FinancialProfileItemModel(title: nil, type: nil, options: nil, value: "5", isMandatory: nil), FinancialProfileItemModel(title: nil, type: nil, options: nil, value: "5", isMandatory: nil)], tip: nil)]
+        let profileModel = [FinancialProfileModel.init(category: .assets, items: [FinancialProfileItemModel(title: nil, type: nil, options: nil, value: "5", isMandatory: nil), FinancialProfileItemModel(title: nil, type: nil, options: nil, value: "5", isMandatory: nil)], tip: "")]
         let isGoodAssetAllocation = reportViewModel?.isGoodIncomeOrAssetAllocation(forProfileDetails: profileModel, category: .assets)
         XCTAssertTrue(isGoodAssetAllocation == true, "There is single or no asset allocations")
     }
     
     func testAssetAllocationIsNotGood() {
-        let profileModel = [FinancialProfileModel.init(category: .assets, items: [FinancialProfileItemModel(title: nil, type: nil, options: nil, value: "5", isMandatory: nil)], tip: nil)]
+        let profileModel = [FinancialProfileModel.init(category: .assets, items: [FinancialProfileItemModel(title: nil, type: nil, options: nil, value: "5", isMandatory: nil)], tip: "")]
         let isGoodAssetAllocation = reportViewModel?.isGoodIncomeOrAssetAllocation(forProfileDetails: profileModel, category: .assets)
         XCTAssertTrue(isGoodAssetAllocation == false, "There are multiple asset allocations")
     }
     
     func testExpenseRatioIsGood() {
-        let incomeModel = FinancialProfileModel.init(category: .income, items: [FinancialProfileItemModel(title: nil, type: nil, options: nil, value: "10", isMandatory: nil)], tip: nil)
-        let expenseModel = FinancialProfileModel.init(category: .expenses, items: [FinancialProfileItemModel(title: nil, type: nil, options: nil, value: "5", isMandatory: nil)], tip: nil)
+        let incomeModel = FinancialProfileModel.init(category: .income, items: [FinancialProfileItemModel(title: nil, type: nil, options: nil, value: "10", isMandatory: nil)], tip: "")
+        let expenseModel = FinancialProfileModel.init(category: .expenses, items: [FinancialProfileItemModel(title: nil, type: nil, options: nil, value: "5", isMandatory: nil)], tip: "")
         let isGoodExpenseRatio = reportViewModel?.isGoodExpenseRatio(forProfileDetails: [incomeModel, expenseModel])
         XCTAssertTrue(isGoodExpenseRatio == true, "Total Expense is greater than 50% of Total Income")
     }
     
     func testExpenseRatioIsNotGood() {
-        let incomeModel = FinancialProfileModel.init(category: .income, items: [FinancialProfileItemModel(title: nil, type: nil, options: nil, value: "10", isMandatory: nil)], tip: nil)
-        let expenseModel = FinancialProfileModel.init(category: .expenses, items: [FinancialProfileItemModel(title: nil, type: nil, options: nil, value: "6", isMandatory: true)], tip: nil)
+        let incomeModel = FinancialProfileModel.init(category: .income, items: [FinancialProfileItemModel(title: nil, type: nil, options: nil, value: "10", isMandatory: nil)], tip: "")
+        let expenseModel = FinancialProfileModel.init(category: .expenses, items: [FinancialProfileItemModel(title: nil, type: nil, options: nil, value: "6", isMandatory: true)], tip: "")
         let isGoodExpenseRatio = reportViewModel?.isGoodExpenseRatio(forProfileDetails: [incomeModel, expenseModel])
         XCTAssertTrue(isGoodExpenseRatio == false, "Total Expense is less than or equal to 50% of Total Income")
     }
     
     func testTotalNetworth() {
-        let assetsModel = FinancialProfileModel.init(category: .assets, items: [FinancialProfileItemModel(title: nil, type: nil, options: nil, value: "10", isMandatory: nil)], tip: nil)
-        let liabilitiesModel = FinancialProfileModel.init(category: .liabilities, items: [FinancialProfileItemModel(title: nil, type: nil, options: nil, value: "5", isMandatory: true)], tip: nil)
+        let assetsModel = FinancialProfileModel.init(category: .assets, items: [FinancialProfileItemModel(title: nil, type: nil, options: nil, value: "10", isMandatory: nil)], tip: "")
+        let liabilitiesModel = FinancialProfileModel.init(category: .liabilities, items: [FinancialProfileItemModel(title: nil, type: nil, options: nil, value: "5", isMandatory: true)], tip: "")
         let totalNetworth = reportViewModel?.getTotalNetWorth(forProfileDetails: [assetsModel, liabilitiesModel])
         XCTAssertEqual(totalNetworth, 5, "Incorrect Total Networth calculation")
     }
     
     func testInsuranceSubscriptionIsGood() {
-        let profileModel = [FinancialProfileModel.init(category: .insurance, items: [FinancialProfileItemModel(title: nil, type: nil, options: nil, value: "5", isMandatory: nil)], tip: nil)]
+        let profileModel = [FinancialProfileModel.init(category: .insurance, items: [FinancialProfileItemModel(title: nil, type: nil, options: nil, value: "5", isMandatory: nil)], tip: "")]
         let isGoodInsuranceSubscription = reportViewModel?.isGoodInsuranceSubscription(forProfileDetails: profileModel)
         XCTAssertTrue(isGoodInsuranceSubscription == true, "Not subscribed for any insurance")
     }
     
     func testInsuranceSubscriptionIsNotGood() {
-        let profileModel = [FinancialProfileModel.init(category: .insurance, items: [], tip: nil)]
+        let profileModel = [FinancialProfileModel.init(category: .insurance, items: [], tip: "")]
         let isGoodInsuranceSubscription = reportViewModel?.isGoodInsuranceSubscription(forProfileDetails: profileModel)
         XCTAssertTrue(isGoodInsuranceSubscription == false, "Subscribed for insurance")
     }

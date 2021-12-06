@@ -53,6 +53,7 @@ struct Constants {
     struct ChartValue {
         static let defaultAmount = "0"
         static let expenseRatio = 0.5
+        static let noDataText = "--"
     }
     enum FinancialService: String, CaseIterable {
         case financePlanner = "Financial Planner"

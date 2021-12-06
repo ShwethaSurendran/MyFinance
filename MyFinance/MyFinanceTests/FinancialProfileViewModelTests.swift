@@ -17,7 +17,7 @@ class FinancialProfileViewModelTests: XCTestCase {
     }
     
     func testHasProfileData() {
-        let testProfileModel = [FinancialProfileModel.init(category: .income, items: [FinancialProfileItemModel(title: nil, type: nil, options: nil, value: "5", isMandatory: nil), FinancialProfileItemModel(title: nil, type: nil, options: nil, value: "5", isMandatory: nil)], tip: nil)]
+        let testProfileModel = [FinancialProfileModel.init(category: .income, items: [FinancialProfileItemModel(title: nil, type: nil, options: nil, value: "5", isMandatory: nil), FinancialProfileItemModel(title: nil, type: nil, options: nil, value: "5", isMandatory: nil)], tip: "")]
         let viewModel = FinancialProfileViewModel.init(fileNameToLoadDataFrom: "", jsonParser: MockJsonParser(testProfileModel: testProfileModel))
         XCTAssertTrue((viewModel.profileData.value?.count).unwrappedValue > 0, "ProfileData is empty")
     }

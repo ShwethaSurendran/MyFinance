@@ -34,7 +34,7 @@ class ChartTableCell: UITableViewCell {
         drawChart()
     }
     
-    ///Asks ViewModel to get data for PieChart and draw if any.
+    ///Ask ViewModel to get data for PieChart and draw if any.
     private func drawChart() {
         if (viewModel?.shouldDrawChart()).unwrappedValue {
             self.chartView.isHidden = false

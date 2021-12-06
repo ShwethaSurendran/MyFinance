@@ -18,7 +18,7 @@ class ProfileDetailsTableCell: UITableViewCell {
 
     func setData(item: FinancialProfileItemModel?) {
         titleLabel.text = item?.title
-        valueLabel.text = item?.value == "" ? "--" : item?.value
+        valueLabel.text = item?.value == "" ? Constants.ChartValue.noDataText : item?.value
     }
 
 }
