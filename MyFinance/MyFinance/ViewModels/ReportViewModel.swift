@@ -89,7 +89,10 @@ struct ReportViewModel {
     func getDivisions(forCategory category: FinancialProfileCategory, from profileData: [FinancialProfileModel])-> [Double] {
         let profileModel = profileData.filter({$0.category == category}).first
         let items: [FinancialProfileItemModel] = (profileModel?.items).unwrappedValue
-        return items.compactMap({Double($0.value ?? Constants.ChartValue.defaultAmount)})
+        let divisions = items.compactMap { model in
+            (model.value?.trimmingCharacters(in: .whitespaces) == "" || model.value?.trimmingCharacters(in: .whitespaces) == Constants.ChartValue.defaultAmount) ? nil : Double(model.value.unwrappedValue)
+        }
+        return divisions
     }
     
     /// Check if Income/Asset allocations are good enough

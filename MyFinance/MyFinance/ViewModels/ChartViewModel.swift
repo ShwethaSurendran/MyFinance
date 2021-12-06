@@ -29,9 +29,11 @@ struct ChartViewModel {
     private func getProfileEntriesAndDivisions()-> ([String], [Double]) {
         let profileCategoryItems: [FinancialProfileItemModel] = (profileModel?.items).unwrappedValue
         let itemNames = profileCategoryItems.compactMap({model in
-            model.value == "" ? nil : model.title
+            (model.value?.trimmingCharacters(in: .whitespaces) == "" || model.value?.trimmingCharacters(in: .whitespaces) == Constants.ChartValue.defaultAmount) ? nil : model.title
         })
-        let divisions = profileCategoryItems.compactMap({Double($0.value ?? Constants.ChartValue.defaultAmount)})
+        let divisions = profileCategoryItems.compactMap { model in
+            return (model.value?.trimmingCharacters(in: .whitespaces) == "" || model.value?.trimmingCharacters(in: .whitespaces) == Constants.ChartValue.defaultAmount) ? nil : Double(model.value.unwrappedValue)
+        }
         return (itemNames, divisions)
     }
     
@@ -68,7 +70,7 @@ struct ChartViewModel {
             ///Setting chart data entries
             let entry = PieChartDataEntry()
             entry.y = value.unwrappedValue
-            entry.label = entries[index]
+            entry.label = entries.isValidIndex(index) ? entries[index] : ""
             dataEntries.append( entry)
         }
         return dataEntries

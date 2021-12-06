@@ -55,4 +55,10 @@ extension InputTextfieldTableCell: UITextFieldDelegate {
         }
         return true
     }
+    
+    /// Hides keyboard on 'done' button click
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
 }
