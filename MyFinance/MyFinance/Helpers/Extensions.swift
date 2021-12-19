@@ -119,3 +119,22 @@ extension Array {
         return index < self.count
     }
 }
+
+
+
+extension UINavigationController {
+    
+    /// Pop to specific viewcontroller in navigation stack
+    func popToViewController(ofClass: AnyClass, animated: Bool = true) {
+        if let viewcontroller = viewControllers.last(where: { $0.isKind(of: ofClass) }) {
+            popToViewController(viewcontroller, animated: animated)
+        }
+    }
+    
+    /// Get previous viewController from the navigation stack
+    var previousViewController: UIViewController? {
+        viewControllers.count > 1 ? viewControllers[viewControllers.count - 2] : nil
+    }
+    
+}
+

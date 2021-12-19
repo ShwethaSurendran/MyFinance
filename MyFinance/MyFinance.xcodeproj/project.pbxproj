@@ -9,17 +9,29 @@
 /* Begin PBXBuildFile section */
 		F401457B2751E7970051BF4A /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = F401457A2751E7970051BF4A /* Protocols.swift */; };
 		F40145A4275276D70051BF4A /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = F40145A3275276D70051BF4A /* IQKeyboardManagerSwift */; };
+		F4055875276CC32D009753FA /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4055874276CC32D009753FA /* UserModel.swift */; };
+		F40657762767BEAC00726466 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = F40657752767BEAC00726466 /* GoogleSignIn */; };
 		F422075C274E1FC600CDCA1A /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F422075B274E1FC600CDCA1A /* Extensions.swift */; };
 		F422075E274E242E00CDCA1A /* JSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F422075D274E242E00CDCA1A /* JSONParser.swift */; };
 		F4220760274E260600CDCA1A /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F422075F274E260600CDCA1A /* Observable.swift */; };
 		F4220763274E26C400CDCA1A /* FinancialProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4220762274E26C400CDCA1A /* FinancialProfileViewModel.swift */; };
+		F4262A652769A26500E298C8 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4262A642769A26500E298C8 /* LoginViewModel.swift */; };
+		F4262A6A2769D83C00E298C8 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4262A692769D83C00E298C8 /* CoreDataManager.swift */; };
+		F4262A6E2769D94A00E298C8 /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F4262A6C2769D94A00E298C8 /* DataModel.xcdatamodeld */; };
 		F46C648F27588BA300EACD0F /* ReportViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46C648E27588BA300EACD0F /* ReportViewModel.swift */; };
 		F47F8E24274CF5D000C0842B /* FinancialProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47F8E23274CF5D000C0842B /* FinancialProfileModel.swift */; };
 		F47F8E26274CF9ED00C0842B /* InputTextfieldTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47F8E25274CF9ED00C0842B /* InputTextfieldTableCell.swift */; };
+		F48843A42768870300DB4DD0 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48843A32768870300DB4DD0 /* LoginViewController.swift */; };
 		F48BB3DA2750E97000BE5BB8 /* DatePickerTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48BB3D92750E97000BE5BB8 /* DatePickerTableCell.swift */; };
 		F48BB3DC2750F5A100BE5BB8 /* CommonUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48BB3DB2750F5A100BE5BB8 /* CommonUtility.swift */; };
 		F48BB3DE275105A000BE5BB8 /* PickerTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48BB3DD275105A000BE5BB8 /* PickerTableCell.swift */; };
 		F491BA2F275A88770006E5DB /* FinancialProfileViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F491BA2E275A88770006E5DB /* FinancialProfileViewModelTests.swift */; };
+		F4A1814D276BB3140068340B /* Item+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A18147276BB3140068340B /* Item+CoreDataClass.swift */; };
+		F4A1814E276BB3140068340B /* Item+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A18148276BB3140068340B /* Item+CoreDataProperties.swift */; };
+		F4A1814F276BB3140068340B /* ProfileCategory+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A18149276BB3140068340B /* ProfileCategory+CoreDataClass.swift */; };
+		F4A18150276BB3140068340B /* ProfileCategory+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A1814A276BB3140068340B /* ProfileCategory+CoreDataProperties.swift */; };
+		F4A18151276BB3140068340B /* User+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A1814B276BB3140068340B /* User+CoreDataClass.swift */; };
+		F4A18152276BB3140068340B /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A1814C276BB3140068340B /* User+CoreDataProperties.swift */; };
 		F4AC5BE22759E340002A89C0 /* FinancialProfileTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4AC5BE12759E340002A89C0 /* FinancialProfileTests.swift */; };
 		F4AC5BE42759FEAD002A89C0 /* ReportViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4AC5BE32759FEAD002A89C0 /* ReportViewModelTests.swift */; };
 		F4B8EBF02755F9860024BBB7 /* ReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B8EBEF2755F9860024BBB7 /* ReportViewController.swift */; };
@@ -35,6 +47,8 @@
 		F4D28930274BE42100CF696A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D2892F274BE42100CF696A /* HomeViewController.swift */; };
 		F4D28933274BEF0300CF696A /* ServiceTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D28932274BEF0300CF696A /* ServiceTableCell.swift */; };
 		F4E6C0F1274CED3200469AB3 /* FinancePlannerCategories.json in Resources */ = {isa = PBXBuildFile; fileRef = F4E6C0F0274CED3200469AB3 /* FinancePlannerCategories.json */; };
+		F4E972EC276E3952007AE2F5 /* CustomNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E972EB276E3952007AE2F5 /* CustomNavigation.swift */; };
+		F4E972EE276E4DA2007AE2F5 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E972ED276E4DA2007AE2F5 /* UserViewModel.swift */; };
 		F4EA27BC275D334B007D59DD /* ChartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EA27BB275D334B007D59DD /* ChartViewModel.swift */; };
 		F4FBDA61274D3DDB00432863 /* FinancialProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FBDA60274D3DDB00432863 /* FinancialProfileViewController.swift */; };
 		F4FBDA64274D44C400432863 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FBDA63274D44C400432863 /* Constants.swift */; };
@@ -59,17 +73,28 @@
 
 /* Begin PBXFileReference section */
 		F401457A2751E7970051BF4A /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
+		F4055874276CC32D009753FA /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		F422075B274E1FC600CDCA1A /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		F422075D274E242E00CDCA1A /* JSONParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONParser.swift; sourceTree = "<group>"; };
 		F422075F274E260600CDCA1A /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 		F4220762274E26C400CDCA1A /* FinancialProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinancialProfileViewModel.swift; sourceTree = "<group>"; };
+		F4262A642769A26500E298C8 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		F4262A692769D83C00E298C8 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		F4262A6D2769D94A00E298C8 /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
 		F46C648E27588BA300EACD0F /* ReportViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportViewModel.swift; sourceTree = "<group>"; };
 		F47F8E23274CF5D000C0842B /* FinancialProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinancialProfileModel.swift; sourceTree = "<group>"; };
 		F47F8E25274CF9ED00C0842B /* InputTextfieldTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputTextfieldTableCell.swift; sourceTree = "<group>"; };
+		F48843A32768870300DB4DD0 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		F48BB3D92750E97000BE5BB8 /* DatePickerTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerTableCell.swift; sourceTree = "<group>"; };
 		F48BB3DB2750F5A100BE5BB8 /* CommonUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonUtility.swift; sourceTree = "<group>"; };
 		F48BB3DD275105A000BE5BB8 /* PickerTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerTableCell.swift; sourceTree = "<group>"; };
 		F491BA2E275A88770006E5DB /* FinancialProfileViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinancialProfileViewModelTests.swift; sourceTree = "<group>"; };
+		F4A18147276BB3140068340B /* Item+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Item+CoreDataClass.swift"; sourceTree = "<group>"; };
+		F4A18148276BB3140068340B /* Item+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Item+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		F4A18149276BB3140068340B /* ProfileCategory+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ProfileCategory+CoreDataClass.swift"; sourceTree = "<group>"; };
+		F4A1814A276BB3140068340B /* ProfileCategory+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ProfileCategory+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		F4A1814B276BB3140068340B /* User+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataClass.swift"; sourceTree = "<group>"; };
+		F4A1814C276BB3140068340B /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		F4AC5BE12759E340002A89C0 /* FinancialProfileTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinancialProfileTests.swift; sourceTree = "<group>"; };
 		F4AC5BE32759FEAD002A89C0 /* ReportViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportViewModelTests.swift; sourceTree = "<group>"; };
 		F4B8EBEF2755F9860024BBB7 /* ReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportViewController.swift; sourceTree = "<group>"; };
@@ -90,6 +115,8 @@
 		F4D2892F274BE42100CF696A /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		F4D28932274BEF0300CF696A /* ServiceTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceTableCell.swift; sourceTree = "<group>"; };
 		F4E6C0F0274CED3200469AB3 /* FinancePlannerCategories.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = FinancePlannerCategories.json; sourceTree = "<group>"; };
+		F4E972EB276E3952007AE2F5 /* CustomNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigation.swift; sourceTree = "<group>"; };
+		F4E972ED276E4DA2007AE2F5 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 		F4EA27BB275D334B007D59DD /* ChartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartViewModel.swift; sourceTree = "<group>"; };
 		F4FBDA60274D3DDB00432863 /* FinancialProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FinancialProfileViewController.swift; sourceTree = "<group>"; };
 		F4FBDA63274D44C400432863 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -102,6 +129,7 @@
 			files = (
 				F40145A4275276D70051BF4A /* IQKeyboardManagerSwift in Frameworks */,
 				F4B8EBF52756001E0024BBB7 /* Charts in Frameworks */,
+				F40657762767BEAC00726466 /* GoogleSignIn in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -145,8 +173,41 @@
 				F4220762274E26C400CDCA1A /* FinancialProfileViewModel.swift */,
 				F46C648E27588BA300EACD0F /* ReportViewModel.swift */,
 				F4EA27BB275D334B007D59DD /* ChartViewModel.swift */,
+				F4262A642769A26500E298C8 /* LoginViewModel.swift */,
+				F4E972ED276E4DA2007AE2F5 /* UserViewModel.swift */,
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		F4262A682769D81700E298C8 /* Store */ = {
+			isa = PBXGroup;
+			children = (
+				F4262A6B2769D92200E298C8 /* CoreData */,
+			);
+			path = Store;
+			sourceTree = "<group>";
+		};
+		F4262A6B2769D92200E298C8 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				F4262A7B2769FB0B00E298C8 /* Entities */,
+				F4262A692769D83C00E298C8 /* CoreDataManager.swift */,
+				F4262A6C2769D94A00E298C8 /* DataModel.xcdatamodeld */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		F4262A7B2769FB0B00E298C8 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				F4A18147276BB3140068340B /* Item+CoreDataClass.swift */,
+				F4A18148276BB3140068340B /* Item+CoreDataProperties.swift */,
+				F4A18149276BB3140068340B /* ProfileCategory+CoreDataClass.swift */,
+				F4A1814A276BB3140068340B /* ProfileCategory+CoreDataProperties.swift */,
+				F4A1814B276BB3140068340B /* User+CoreDataClass.swift */,
+				F4A1814C276BB3140068340B /* User+CoreDataProperties.swift */,
+			);
+			path = Entities;
 			sourceTree = "<group>";
 		};
 		F4D288EA274BE2A200CF696A = {
@@ -172,6 +233,7 @@
 		F4D288F5274BE2A200CF696A /* MyFinance */ = {
 			isa = PBXGroup;
 			children = (
+				F4262A682769D81700E298C8 /* Store */,
 				F4D288F6274BE2A200CF696A /* AppDelegate.swift */,
 				F4D288F8274BE2A200CF696A /* SceneDelegate.swift */,
 				F4D28907274BE2A300CF696A /* Info.plist */,
@@ -221,6 +283,7 @@
 				F4D2892F274BE42100CF696A /* HomeViewController.swift */,
 				F4FBDA60274D3DDB00432863 /* FinancialProfileViewController.swift */,
 				F4B8EBEF2755F9860024BBB7 /* ReportViewController.swift */,
+				F48843A32768870300DB4DD0 /* LoginViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -242,6 +305,7 @@
 			isa = PBXGroup;
 			children = (
 				F47F8E23274CF5D000C0842B /* FinancialProfileModel.swift */,
+				F4055874276CC32D009753FA /* UserModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -255,6 +319,7 @@
 				F422075D274E242E00CDCA1A /* JSONParser.swift */,
 				F422075F274E260600CDCA1A /* Observable.swift */,
 				F48BB3DB2750F5A100BE5BB8 /* CommonUtility.swift */,
+				F4E972EB276E3952007AE2F5 /* CustomNavigation.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -278,6 +343,7 @@
 			packageProductDependencies = (
 				F40145A3275276D70051BF4A /* IQKeyboardManagerSwift */,
 				F4B8EBF42756001E0024BBB7 /* Charts */,
+				F40657752767BEAC00726466 /* GoogleSignIn */,
 			);
 			productName = MyFinance;
 			productReference = F4D288F3274BE2A200CF696A /* MyFinance.app */;
@@ -353,6 +419,7 @@
 			packageReferences = (
 				F40145A2275276D70051BF4A /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
 				F4B8EBF32756001E0024BBB7 /* XCRemoteSwiftPackageReference "Charts" */,
+				F40657742767BEAC00726466 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
 			);
 			productRefGroup = F4D288F4274BE2A200CF696A /* Products */;
 			projectDirPath = "";
@@ -398,8 +465,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F4262A652769A26500E298C8 /* LoginViewModel.swift in Sources */,
+				F4A18150276BB3140068340B /* ProfileCategory+CoreDataProperties.swift in Sources */,
 				F46C648F27588BA300EACD0F /* ReportViewModel.swift in Sources */,
 				F47F8E24274CF5D000C0842B /* FinancialProfileModel.swift in Sources */,
+				F4A1814D276BB3140068340B /* Item+CoreDataClass.swift in Sources */,
 				F4220760274E260600CDCA1A /* Observable.swift in Sources */,
 				F47F8E26274CF9ED00C0842B /* InputTextfieldTableCell.swift in Sources */,
 				F4D28933274BEF0300CF696A /* ServiceTableCell.swift in Sources */,
@@ -408,15 +478,25 @@
 				F48BB3DA2750E97000BE5BB8 /* DatePickerTableCell.swift in Sources */,
 				F4B8EBF22755FA5D0024BBB7 /* ChartTableCell.swift in Sources */,
 				F422075E274E242E00CDCA1A /* JSONParser.swift in Sources */,
+				F4A1814F276BB3140068340B /* ProfileCategory+CoreDataClass.swift in Sources */,
+				F48843A42768870300DB4DD0 /* LoginViewController.swift in Sources */,
+				F4A1814E276BB3140068340B /* Item+CoreDataProperties.swift in Sources */,
 				F48BB3DE275105A000BE5BB8 /* PickerTableCell.swift in Sources */,
+				F4A18152276BB3140068340B /* User+CoreDataProperties.swift in Sources */,
 				F4B8EBF02755F9860024BBB7 /* ReportViewController.swift in Sources */,
+				F4A18151276BB3140068340B /* User+CoreDataClass.swift in Sources */,
 				F48BB3DC2750F5A100BE5BB8 /* CommonUtility.swift in Sources */,
+				F4E972EC276E3952007AE2F5 /* CustomNavigation.swift in Sources */,
 				F4220763274E26C400CDCA1A /* FinancialProfileViewModel.swift in Sources */,
 				F4D288F7274BE2A200CF696A /* AppDelegate.swift in Sources */,
+				F4262A6A2769D83C00E298C8 /* CoreDataManager.swift in Sources */,
+				F4055875276CC32D009753FA /* UserModel.swift in Sources */,
 				F4D288F9274BE2A200CF696A /* SceneDelegate.swift in Sources */,
 				F4FBDA61274D3DDB00432863 /* FinancialProfileViewController.swift in Sources */,
 				F4D28930274BE42100CF696A /* HomeViewController.swift in Sources */,
 				F422075C274E1FC600CDCA1A /* Extensions.swift in Sources */,
+				F4262A6E2769D94A00E298C8 /* DataModel.xcdatamodeld in Sources */,
+				F4E972EE276E4DA2007AE2F5 /* UserViewModel.swift in Sources */,
 				F401457B2751E7970051BF4A /* Protocols.swift in Sources */,
 				F4FBDA64274D44C400432863 /* Constants.swift in Sources */,
 			);
@@ -603,7 +683,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.myApp.myFinance.MyFinance;
+				PRODUCT_BUNDLE_IDENTIFIER = com.myfinance.ios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -622,7 +702,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.myApp.myFinance.MyFinance;
+				PRODUCT_BUNDLE_IDENTIFIER = com.myfinance.ios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -763,6 +843,14 @@
 				minimumVersion = 6.5.9;
 			};
 		};
+		F40657742767BEAC00726466 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/google/GoogleSignIn-iOS";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.0.2;
+			};
+		};
 		F4B8EBF32756001E0024BBB7 /* XCRemoteSwiftPackageReference "Charts" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/danielgindi/Charts.git";
@@ -779,12 +867,30 @@
 			package = F40145A2275276D70051BF4A /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;
 			productName = IQKeyboardManagerSwift;
 		};
+		F40657752767BEAC00726466 /* GoogleSignIn */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F40657742767BEAC00726466 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
+			productName = GoogleSignIn;
+		};
 		F4B8EBF42756001E0024BBB7 /* Charts */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = F4B8EBF32756001E0024BBB7 /* XCRemoteSwiftPackageReference "Charts" */;
 			productName = Charts;
 		};
 /* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		F4262A6C2769D94A00E298C8 /* DataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				F4262A6D2769D94A00E298C8 /* DataModel.xcdatamodel */,
+			);
+			currentVersion = F4262A6D2769D94A00E298C8 /* DataModel.xcdatamodel */;
+			path = DataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = F4D288EB274BE2A200CF696A /* Project object */;
 }

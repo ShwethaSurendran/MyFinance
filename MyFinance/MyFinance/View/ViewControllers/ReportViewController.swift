@@ -9,6 +9,7 @@ import UIKit
 
 final class ReportViewController: UIViewController {
     
+    
     @IBOutlet weak var reportTableView: UITableView!
     
     var profileData: [FinancialProfileModel] = []
@@ -30,9 +31,13 @@ final class ReportViewController: UIViewController {
     
     /// Pops to previous screen on back icon click
     @IBAction func onBackIconClick(_ sender: Any) {
-        self.navigationController?.popToRootViewController(animated: false)
+        if LoginViewModel().isUserLoggedIn() {
+            navigationController?.popToViewController(ofClass: HomeViewController.self, animated: true)
+        }else {
+            navigationController?.popToRootViewController(animated: true)
+        }
     }
-    
+
 }
 
 
@@ -85,3 +90,6 @@ extension ReportViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
 }
+
+
+

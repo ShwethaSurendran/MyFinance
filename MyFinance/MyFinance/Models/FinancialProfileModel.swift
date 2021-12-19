@@ -11,24 +11,28 @@ struct FinancialProfileModel: Decodable {
     var category: FinancialProfileCategory?
     var items: [FinancialProfileItemModel]?
     var tip: String?
+    var index: Int?
     
-    init(category: FinancialProfileCategory, items: [FinancialProfileItemModel], tip: String) {
+    init(category: FinancialProfileCategory?, items: [FinancialProfileItemModel]?, tip: String?, index: Int?) {
         self.category = category
         self.items = items
         self.tip = tip
+        self.index = index
     }
     
     enum CodingKeys: String, CodingKey {
         case category = "category"
         case items = "items"
         case tip = "tip"
+        case index = "index"
     }
     
     init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         category = try values.decodeIfPresent(FinancialProfileCategory.self, forKey: .category)
-        items = try values.decodeIfPresent([FinancialProfileItemModel].self, forKey: .items) ?? []
+        items = try values.decodeIfPresent([FinancialProfileItemModel].self, forKey: .items).unwrappedValue
         tip = try values.decodeIfPresent(String.self, forKey: .tip).unwrappedValue
+        index = try values.decodeIfPresent(Int.self, forKey: .index).unwrappedValue
     }
     
 }

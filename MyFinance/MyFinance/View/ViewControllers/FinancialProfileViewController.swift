@@ -12,31 +12,28 @@ final class FinancialProfileViewController: UIViewController {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var profileDetailsTableview: UITableView!
     
-    private var profileData: [FinancialProfileModel] = []
+    var profileData: [FinancialProfileModel] = []
     private var screenIndex = 0
-    var currentOption: Constants.FinancialService = .financePlanner
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         ///If profileData is empty, then bind to viewModel for getting profile Details. Else, update UI from existing ProfileData
         profileData.isEmpty ? bindToViewModel() : setupData()
     }
     
     /// setup UI data
     private func setupData() {
-        if profileData.count > 0, profileData.isValidIndex(screenIndex) {
+        if profileData.isValidIndex(screenIndex) {
             titleLabel.text = profileData[screenIndex].category?.rawValue
-            profileDetailsTableview.reloadData()
+            //            profileDetailsTableview.reloadData()
         }
     }
     
     /// Bind to profileData property of viewModel
     /// Update UI, when there is an update in profileData property
     private func bindToViewModel() {
-        let jsonFileName = currentOption == .financePlanner ? Constants.JsonFileNames.financePlannerCategories : Constants.JsonFileNames.wealthCreationCategories
-        var viewModel: FinancialProfileViewModel = FinancialProfileViewModel(fileNameToLoadDataFrom: jsonFileName, jsonParser: JSONParser())
+        var viewModel: FinancialProfileViewModel = FinancialProfileViewModel(fileNameToLoadDataFrom: Constants.JsonFileNames.financePlannerCategories, jsonParser: JSONParser())
         viewModel.profileData.bind({[weak self] responseModel in
             self?.profileData = responseModel.unwrappedValue
             self?.setupData()
@@ -46,6 +43,10 @@ final class FinancialProfileViewController: UIViewController {
     @IBAction func onClickSubmit(_ sender: Any) {
         ///On submit, Check if mandatory fields are filled
         if profileData.isValidIndex(screenIndex),!isMandatoryFieldsAreEmpty(financialProfileModel: profileData[screenIndex]) {
+            
+            ///save current screen details to store
+            saveProfileData()
+            
             if profileData.isValidIndex(screenIndex+1) {
                 ///Navigates to new screen by passing index of next details to be shown
                 navigateToNextProfileCategoryScreen()
@@ -56,6 +57,15 @@ final class FinancialProfileViewController: UIViewController {
         }else {
             ///Show alert asking to fill mandatory fields
             showAlert(title: "", message: Constants.AlertMessage.mandatoryFieldAlert, actionHandler: {})
+        }
+    }
+    
+    ///save current screen details to store only if user logged in
+    private func saveProfileData() {
+        if LoginViewModel().isUserLoggedIn() {
+            let userViewModel = UserViewModel()
+            let loggedInUserData = userViewModel.getLoggedInUserDetails()
+            userViewModel.save(profileData: profileData[screenIndex], to: CoreDataManager(), forUser: loggedInUserData.email.unwrappedValue)
         }
     }
     
@@ -77,7 +87,7 @@ final class FinancialProfileViewController: UIViewController {
     /// Check 'isMandatory' key of each profile detail and check if its value is empty
     /// - Parameter financialProfileModel: Profile Details shown in currently viewing screen
     /// - Returns: Boolean value indicating if mandatory fields are empty
-    func isMandatoryFieldsAreEmpty(financialProfileModel: FinancialProfileModel)-> Bool {
+    private func isMandatoryFieldsAreEmpty(financialProfileModel: FinancialProfileModel)-> Bool {
         guard let items = financialProfileModel.items else {return false}
         for each in items {
             if (each.isMandatory.unwrappedValue), (each.value.unwrappedValue.isEmpty) {

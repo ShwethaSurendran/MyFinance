@@ -17,7 +17,6 @@ struct Constants {
     }
     struct JsonFileNames {
         static let financePlannerCategories = "FinancePlannerCategories"
-        static let wealthCreationCategories = "WealthCreationCategories"
     }
     struct FileExtension {
         static let json = "json"
@@ -55,8 +54,12 @@ struct Constants {
         static let expenseRatio = 0.5
         static let noDataText = "--"
     }
-    enum FinancialService: String, CaseIterable {
-        case financePlanner = "Financial Planner"
+    enum FinancialServiceOption: String {
+        case generateReport = "Generate FinancialPlan Report"
+        case yourReport = "Your Report"
+    }
+    struct GoogleSignIn {
+        static let clientId = "750914463346-ffhqr81ih6kkuiolbt37vthd5vclvnje.apps.googleusercontent.com"
     }
     
 }

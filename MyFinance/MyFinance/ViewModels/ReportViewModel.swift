@@ -24,7 +24,7 @@ struct ReportViewModel {
             profileData[index].tip = tipMessage
         }
         
-        let emergencyFundData = FinancialProfileModel(category: .emergencyPlanning, items: [], tip: Constants.ReportCategoryTip.emergencyFund)
+        let emergencyFundData = FinancialProfileModel(category: .emergencyPlanning, items: [], tip: Constants.ReportCategoryTip.emergencyFund, index: profileData.count + 1)
         profileData.append(emergencyFundData)
         updatedProfileData.value = profileData
     }

@@ -16,17 +16,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1gg-Ql-9Mn">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="financialPlanImage" translatesAutoresizingMaskIntoConstraints="NO" id="rkP-dq-0oq">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1gg-Ql-9Mn">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Finance" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B6w-cS-ifM">
                                         <rect key="frame" x="54.5" y="401.5" width="305" height="93"/>
                                         <fontDescription key="fontDescription" name="Papyrus" family="Papyrus" pointSize="60"/>
-                                        <color key="textColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="textColor" red="0.0089638456699999997" green="0.1418717206" blue="0.27060201760000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" red="0.25490196079999999" green="0.32156862749999998" blue="0.49803921569999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="B6w-cS-ifM" firstAttribute="centerY" secondItem="1gg-Ql-9Mn" secondAttribute="centerY" id="NZQ-Xb-CKf"/>
                                     <constraint firstItem="B6w-cS-ifM" firstAttribute="centerX" secondItem="1gg-Ql-9Mn" secondAttribute="centerX" id="dXl-cK-LlF"/>
@@ -36,10 +39,14 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="rkP-dq-0oq" secondAttribute="trailing" id="7LY-81-oNv"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="1gg-Ql-9Mn" secondAttribute="trailing" id="KTQ-Ep-KyO"/>
                             <constraint firstAttribute="bottom" secondItem="1gg-Ql-9Mn" secondAttribute="bottom" id="btd-Lg-iCw"/>
                             <constraint firstItem="1gg-Ql-9Mn" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="dhA-4K-RH1"/>
+                            <constraint firstItem="rkP-dq-0oq" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="j6P-hS-hm6"/>
                             <constraint firstItem="1gg-Ql-9Mn" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="tND-i6-2pe"/>
+                            <constraint firstItem="rkP-dq-0oq" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="uZI-QK-feF"/>
+                            <constraint firstAttribute="bottom" secondItem="rkP-dq-0oq" secondAttribute="bottom" id="xeh-h5-VMG"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -49,6 +56,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="financialPlanImage" width="723.5" height="860.5"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

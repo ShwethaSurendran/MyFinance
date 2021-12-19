@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "icons8-back-50.png",
+      "filename" : "GoogleIcon.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "icons8-back-51.png",
+      "filename" : "GoogleIcon-1.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "icons8-back-52.png",
+      "filename" : "GoogleIcon-2.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
@@ -19,8 +19,5 @@
   "info" : {
     "author" : "xcode",
     "version" : 1
-  },
-  "properties" : {
-    "template-rendering-intent" : "template"
   }
 }
