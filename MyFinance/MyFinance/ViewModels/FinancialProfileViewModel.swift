@@ -12,6 +12,8 @@ struct FinancialProfileViewModel {
     
     var profileData: Observable<[FinancialProfileModel]?> = Observable(nil)
     
+    init() {}
+    
     init(fileNameToLoadDataFrom fileName: String, jsonParser: JSONParserProtocol) {
         getProfileData(fromJSONFile: fileName, jsonParser: jsonParser)
     }

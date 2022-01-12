@@ -18,6 +18,7 @@
 		F4262A652769A26500E298C8 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4262A642769A26500E298C8 /* LoginViewModel.swift */; };
 		F4262A6A2769D83C00E298C8 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4262A692769D83C00E298C8 /* CoreDataManager.swift */; };
 		F4262A6E2769D94A00E298C8 /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F4262A6C2769D94A00E298C8 /* DataModel.xcdatamodeld */; };
+		F44DE779277AE49A00F72E43 /* LoginViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F44DE778277AE49A00F72E43 /* LoginViewModelTests.swift */; };
 		F46C648F27588BA300EACD0F /* ReportViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46C648E27588BA300EACD0F /* ReportViewModel.swift */; };
 		F47F8E24274CF5D000C0842B /* FinancialProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47F8E23274CF5D000C0842B /* FinancialProfileModel.swift */; };
 		F47F8E26274CF9ED00C0842B /* InputTextfieldTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47F8E25274CF9ED00C0842B /* InputTextfieldTableCell.swift */; };
@@ -25,6 +26,7 @@
 		F48BB3DA2750E97000BE5BB8 /* DatePickerTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48BB3D92750E97000BE5BB8 /* DatePickerTableCell.swift */; };
 		F48BB3DC2750F5A100BE5BB8 /* CommonUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48BB3DB2750F5A100BE5BB8 /* CommonUtility.swift */; };
 		F48BB3DE275105A000BE5BB8 /* PickerTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48BB3DD275105A000BE5BB8 /* PickerTableCell.swift */; };
+		F490233427738BFE00CA5D6A /* UserViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F490233327738BFE00CA5D6A /* UserViewModelTests.swift */; };
 		F491BA2F275A88770006E5DB /* FinancialProfileViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F491BA2E275A88770006E5DB /* FinancialProfileViewModelTests.swift */; };
 		F4A1814D276BB3140068340B /* Item+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A18147276BB3140068340B /* Item+CoreDataClass.swift */; };
 		F4A1814E276BB3140068340B /* Item+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A18148276BB3140068340B /* Item+CoreDataProperties.swift */; };
@@ -81,6 +83,7 @@
 		F4262A642769A26500E298C8 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		F4262A692769D83C00E298C8 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		F4262A6D2769D94A00E298C8 /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
+		F44DE778277AE49A00F72E43 /* LoginViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModelTests.swift; sourceTree = "<group>"; };
 		F46C648E27588BA300EACD0F /* ReportViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportViewModel.swift; sourceTree = "<group>"; };
 		F47F8E23274CF5D000C0842B /* FinancialProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinancialProfileModel.swift; sourceTree = "<group>"; };
 		F47F8E25274CF9ED00C0842B /* InputTextfieldTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputTextfieldTableCell.swift; sourceTree = "<group>"; };
@@ -88,6 +91,7 @@
 		F48BB3D92750E97000BE5BB8 /* DatePickerTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerTableCell.swift; sourceTree = "<group>"; };
 		F48BB3DB2750F5A100BE5BB8 /* CommonUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonUtility.swift; sourceTree = "<group>"; };
 		F48BB3DD275105A000BE5BB8 /* PickerTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerTableCell.swift; sourceTree = "<group>"; };
+		F490233327738BFE00CA5D6A /* UserViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModelTests.swift; sourceTree = "<group>"; };
 		F491BA2E275A88770006E5DB /* FinancialProfileViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinancialProfileViewModelTests.swift; sourceTree = "<group>"; };
 		F4A18147276BB3140068340B /* Item+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Item+CoreDataClass.swift"; sourceTree = "<group>"; };
 		F4A18148276BB3140068340B /* Item+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Item+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -249,9 +253,11 @@
 		F4D2890F274BE2A300CF696A /* MyFinanceTests */ = {
 			isa = PBXGroup;
 			children = (
+				F44DE778277AE49A00F72E43 /* LoginViewModelTests.swift */,
 				F4AC5BE12759E340002A89C0 /* FinancialProfileTests.swift */,
 				F491BA2E275A88770006E5DB /* FinancialProfileViewModelTests.swift */,
 				F4AC5BE32759FEAD002A89C0 /* ReportViewModelTests.swift */,
+				F490233327738BFE00CA5D6A /* UserViewModelTests.swift */,
 				F4D28912274BE2A300CF696A /* Info.plist */,
 			);
 			path = MyFinanceTests;
@@ -506,7 +512,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F44DE779277AE49A00F72E43 /* LoginViewModelTests.swift in Sources */,
 				F4AC5BE42759FEAD002A89C0 /* ReportViewModelTests.swift in Sources */,
+				F490233427738BFE00CA5D6A /* UserViewModelTests.swift in Sources */,
 				F491BA2F275A88770006E5DB /* FinancialProfileViewModelTests.swift in Sources */,
 				F4AC5BE22759E340002A89C0 /* FinancialProfileTests.swift in Sources */,
 			);

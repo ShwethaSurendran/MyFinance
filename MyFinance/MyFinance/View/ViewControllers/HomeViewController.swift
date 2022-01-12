@@ -17,7 +17,7 @@ final class HomeViewController: UIViewController {
     
     private var profileData: [FinancialProfileModel] = []
     private var options: [Constants.FinancialServiceOption] = [.generateReport]
-    private let loginViewModel = LoginViewModel()
+    private var loginViewModel = LoginViewModel()
     private let userViewModel = UserViewModel()
     
     

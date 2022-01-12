@@ -87,7 +87,7 @@ final class FinancialProfileViewController: UIViewController {
     /// Check 'isMandatory' key of each profile detail and check if its value is empty
     /// - Parameter financialProfileModel: Profile Details shown in currently viewing screen
     /// - Returns: Boolean value indicating if mandatory fields are empty
-    private func isMandatoryFieldsAreEmpty(financialProfileModel: FinancialProfileModel)-> Bool {
+    func isMandatoryFieldsAreEmpty(financialProfileModel: FinancialProfileModel)-> Bool {
         guard let items = financialProfileModel.items else {return false}
         for each in items {
             if (each.isMandatory.unwrappedValue), (each.value.unwrappedValue.isEmpty) {

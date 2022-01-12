@@ -57,6 +57,7 @@ extension CoreDataManager: DatabaseProtocol {
         }
         
         userObject.addToCategories(categoryObject)
+        
         saveContext()
     }
     

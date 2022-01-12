@@ -8,7 +8,7 @@
 import GoogleSignIn
 
 protocol UserProtocol {
-    func getLoggedInUserDetails()-> UserModel
+    func getLoggedInUserDetails(googleSignIn: GoogleSignInProtocol?)-> UserModel
     func save(profileData: FinancialProfileModel, to store: DatabaseProtocol, forUser emailId: String)
     func getExistingProfileData(from store: DatabaseProtocol, forUser emailId: String)-> [FinancialProfileModel]?
 }
@@ -18,8 +18,8 @@ struct UserViewModel: UserProtocol {
     
     /// Returns logged in user details
     /// - Returns: UserModel object that has all available user details
-    func getLoggedInUserDetails()-> UserModel {
-        let currentUser = GIDSignIn.sharedInstance.currentUser
+    func getLoggedInUserDetails(googleSignIn: GoogleSignInProtocol? = GIDSignIn.sharedInstance)-> UserModel {
+        let currentUser = googleSignIn?.currentLoggedInUser
         return UserModel(name: (currentUser?.profile?.name).unwrappedValue, email: (currentUser?.profile?.email).unwrappedValue)
     }
     
@@ -53,7 +53,7 @@ struct UserViewModel: UserProtocol {
     /// Check 'isMandatory' key of each profile detail and check if its value is empty
     /// - Parameter profileData: Profile Details on which to check
     /// - Returns: Boolean value indicating if mandatory field has value or not
-    private func isMandatoryFieldHasValue(profileData: [FinancialProfileModel])-> Bool {
+    func isMandatoryFieldHasValue(profileData: [FinancialProfileModel])-> Bool {
         let mappedData = (profileData.compactMap({$0.items})).flatMap({$0})
         
         for each in mappedData {
